@@ -11,14 +11,17 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('templates', function (Blueprint $table) {
+        Schema::create('devices', function (Blueprint $table) {
             $table->uuid('id');
-            $table->string('name');
-            $table->jsonb('content')->default([]);
+            $table->foreignIdFor(\App\Models\User::class);
+            $table->string('device_token');
+            $table->timestamp('last_logged_at');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->index(['user_id', 'device_token']);
         });
     }
 
@@ -27,8 +30,8 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('templates');
+        Schema::dropIfExists('devices');
     }
 };
