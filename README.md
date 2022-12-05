@@ -6,6 +6,12 @@ Build notification system with laravel framework. This system will be implemente
 First, you have to configure your `.env` file, following the example below. The host name must contain the name of the service configured in the `docker-compose.yml` file.
 The docker management service used is [Laravel sail](https://laravel.com/docs/9.x/sail)
 
+### Cache and Queue
+```dotenv
+QUEUE_CONNECTION=redis
+CACHE_DRIVER=memcached
+```
+
 ### Redis
 
 ```dotenv
