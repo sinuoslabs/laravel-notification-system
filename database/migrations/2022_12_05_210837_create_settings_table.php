@@ -14,10 +14,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('settings', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->foreignIdFor(\App\Models\User::class);
-            $table->enum('channel', ['EMAIL', 'SMS', 'PUSH_NOTIFICATION']);
-            $table->boolean('opt-in')->default(true);
+            $table->enum('channel', [
+                'EMAIL',
+                'SMS',
+                'PUSH_NOTIFICATION',
+                'IN_APP_PUSH_NOTIFICATION',
+                'WEBHOOK'
+            ])->index();
+            $table->boolean('opt-in')->default(true)->index();
             $table->timestamps();
             $table->softDeletes();
 

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('devices', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->foreignIdFor(\App\Models\User::class);
             $table->string('device_token');
             $table->timestamp('last_logged_at');

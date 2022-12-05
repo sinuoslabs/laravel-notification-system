@@ -11,11 +11,12 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('templates', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('name');
+            $table->string('template_id')->unique();
             $table->jsonb('content')->default([]);
             $table->timestamps();
             $table->softDeletes();
@@ -27,7 +28,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('templates');
     }
