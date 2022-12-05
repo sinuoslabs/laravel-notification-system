@@ -17,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('inbound')->group(function () {
+
+});
+
+Route::prefix('Outbound')->group(function () {
+//    Route::post('send', '');
+//
+//    Route::post('sms', '');
+//    Route::post('email', '');
+//    Route::post('fcm', '');
+//    Route::post('slack', '');
+//    Route::post('telegram', '');
+});
