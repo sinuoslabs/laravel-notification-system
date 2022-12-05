@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Http\Controllers\Outbound;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
+class SmsNotificationController extends Controller
+{
+    /**
+     * Handle the incoming request.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function __invoke(Request $request)
+    {
+        //
+    }
+}
