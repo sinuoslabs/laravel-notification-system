@@ -59,4 +59,4 @@ Although Laravel has a notification system, we are not going to use it here, the
 ## Architecture design
 Our system must be able to send notifications via SMS, push, email and webhook.
 
-![img.png](system-design/img.png)
+![img.png](system-design/white.jpg)
