@@ -59,4 +59,16 @@ Although Laravel has a notification system, we are not going to use it here, the
 ## Architecture design
 Our system must be able to send notifications via SMS, push, email and webhook.
 
-![img.png](system-design/white.jpg)
+### Design
+
+![img.png](system-design/ms-notification-service.jpg)
+
+### Flow
+
+![img.png](system-design/ms-notification-flow.jpg)
+
+## Inspiration
+
+[ByteByteGo](https://bytebytego.com/courses/system-design-interview/design-a-notification-system)
+
+[NotificationAPI](https://www.notificationapi.com/blog/notification-service-design-with-architectural-diagrams)
