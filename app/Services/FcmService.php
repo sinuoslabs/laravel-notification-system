@@ -2,7 +2,16 @@
 
 namespace App\Services;
 
-class FcmService
+use App\Services\Contracts\NotificationInterface;
+
+class FcmService implements NotificationInterface
 {
 
+    /**
+     * @return mixed
+     */
+    public function send()
+    {
+        // TODO: Implement send() method.
+    }
 }

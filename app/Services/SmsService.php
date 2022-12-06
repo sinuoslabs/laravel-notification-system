@@ -2,7 +2,16 @@
 
 namespace App\Services;
 
-class SmsService
+use App\Services\Contracts\NotificationInterface;
+
+class SmsService implements NotificationInterface
 {
 
+    /**
+     * @return mixed
+     */
+    public function send()
+    {
+        // TODO: Implement send() method.
+    }
 }
