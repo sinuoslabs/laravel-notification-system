@@ -23,10 +23,10 @@ class EmailNotificationController extends Controller
     public function __invoke(EmailRequest $request)
     {
         //
-        Cache::get('user', function () use ($request) {
+        $user = Cache::get('user', function () use ($request) {
             User::find($request->get('user_id'));
         });
 
-        ProcessEmail::dispatch()->onQueue('emails');
+        ProcessEmail::dispatch($user, $request)->onQueue('emails');
     }
 }
