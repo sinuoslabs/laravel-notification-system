@@ -7,8 +7,10 @@ namespace App\Http\Controllers\Outbound;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Outbound\EmailRequest;
 use App\Jobs\Outbound\ProcessEmail;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Cache;
 
 class EmailNotificationController extends Controller
 {
@@ -21,6 +23,10 @@ class EmailNotificationController extends Controller
     public function __invoke(EmailRequest $request)
     {
         //
+        Cache::get('user', function () use ($request) {
+            User::find($request->get('user_id'));
+        });
+
         ProcessEmail::dispatch()->onQueue('emails');
     }
 }

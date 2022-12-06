@@ -24,7 +24,11 @@ class EmailRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'to' => 'required|array',
+            'to.*.user_id' => 'required|exists,users',
+            'from.email' => 'required|email|exists,users',
+            'subject' => 'required|string',
+            'content' => 'required|array'
         ];
     }
 }
