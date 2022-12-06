@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\Outbound\{EmailNotificationController,
-    FcmNotificationController,
-    NotificationController,
-    SmsNotificationController
-};
+use App\Http\Controllers\Outbound\EmailNotificationController;
+use App\Http\Controllers\Outbound\FcmNotificationController;
+use App\Http\Controllers\Outbound\NotificationController;
+use App\Http\Controllers\Outbound\SmsNotificationController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('outbound')->group(function () {

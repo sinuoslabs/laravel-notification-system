@@ -12,7 +12,7 @@ class FcmNotificationController extends Controller
     /**
      * Handle the incoming request.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)
