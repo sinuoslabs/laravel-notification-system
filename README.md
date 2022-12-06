@@ -50,4 +50,13 @@ MAIL_FROM_ADDRESS="hello@example.com"
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
+## Job queue
+Laravel allows to generate jobs, while taking into account the queue system. So, we will not set up a service from scratch, we will simply use the one provided by Laravel.
+
+## Notification
+Although Laravel has a notification system, we are not going to use it here, the idea is to show you how to set up a good system simply with the `design pattern`, so you could reproduce it more easily with any programming language of your choice.
+
 ## Architecture design
+Our system must be able to send notifications via SMS, push, email and webhook.
+
+![img.png](system-design/img.png)
