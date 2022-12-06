@@ -20,7 +20,6 @@ return new class() extends Migration
             $table->foreignIdFor(\App\Models\User::class);
             $table->string('device_token');
             $table->timestamp('last_logged_at');
-            $table->timestamps();
             $table->softDeletes();
 
             $table->index(['user_id', 'device_token']);

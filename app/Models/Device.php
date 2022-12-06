@@ -16,6 +16,8 @@ class Device extends Model
     use SoftDeletes;
     use HasUuids;
 
+    public $timestamps = false;
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
