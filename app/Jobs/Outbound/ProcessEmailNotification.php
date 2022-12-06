@@ -4,6 +4,7 @@ namespace App\Jobs\Outbound;
 
 use App\Http\Requests\Outbound\EmailRequest;
 use App\Models\User;
+use App\Notifications\EmailNotification;
 use App\Services\Contracts\NotificationInterface;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
@@ -12,7 +13,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
-class ProcessEmail implements ShouldQueue
+class ProcessEmailNotification implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 

@@ -1,15 +1,11 @@
 <?php
 
-namespace App\Services;
+namespace App\Notifications;
 
 use App\Services\Contracts\NotificationInterface;
 
-class EmailService implements NotificationInterface
+class SmsNotification implements NotificationInterface
 {
-
-    /**
-     * @return void
-     */
     public function send()
     {
         // TODO: Implement send() method.

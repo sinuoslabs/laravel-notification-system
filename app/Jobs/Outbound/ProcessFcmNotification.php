@@ -2,6 +2,9 @@
 
 namespace App\Jobs\Outbound;
 
+use App\Channels\FcmProvider;
+use App\Notifications\PushNotification;
+use App\Services\NotificationService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -9,7 +12,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
-class ProcessFcm implements ShouldQueue
+class ProcessFcmNotification implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -28,8 +31,14 @@ class ProcessFcm implements ShouldQueue
      *
      * @return void
      */
-    public function handle()
+    public function handle(): void
     {
-        //
+        $notification = new PushNotification(
+            (new FcmProvider())
+                ->setTitle('Hello')
+                ->setBody('Hello')
+        );
+
+        NotificationService::send($notification);
     }
 }

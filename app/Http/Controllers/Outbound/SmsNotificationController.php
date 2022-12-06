@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Outbound;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Outbound\SmsRequest;
-use App\Jobs\Outbound\ProcessSms;
+use App\Jobs\Outbound\ProcessSmsNotification;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -21,6 +21,6 @@ class SmsNotificationController extends Controller
     public function __invoke(SmsRequest $request)
     {
         //
-        ProcessSms::dispatch()->onQueue('sms');
+        ProcessSmsNotification::dispatch()->onQueue('sms');
     }
 }
