@@ -17,7 +17,7 @@ return new class extends Migration
             $table->uuid('id');
             $table->string('name');
             $table->string('iso_code');
-            $table->string('dial_code');
+            $table->unsignedInteger('dial_code');
             $table->string('mask');
         });
     }
