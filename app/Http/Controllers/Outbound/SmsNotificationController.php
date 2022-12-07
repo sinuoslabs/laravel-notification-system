@@ -16,11 +16,14 @@ class SmsNotificationController extends Controller
      * Handle the incoming request.
      *
      * @param SmsRequest $request
-     * @return Response
+     * @return bool
      */
-    public function __invoke(SmsRequest $request)
+    public function __invoke(SmsRequest $request): bool
     {
-        //
-        ProcessSmsNotification::dispatch()->onQueue('sms');
+        ProcessSmsNotification::dispatch()
+            ->onQueue('sms')
+            ->delay(5);
+
+        return true;
     }
 }

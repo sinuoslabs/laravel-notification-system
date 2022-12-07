@@ -29,16 +29,16 @@ class ProcessFcmNotification implements ShouldQueue
     /**
      * Execute the job.
      *
-     * @return void
+     * @return mixed
      */
-    public function handle(): void
+    public function handle(): mixed
     {
-        $notification = new PushNotification(
-            (new FcmAdapter())
+        $notification = new PushNotification((new FcmAdapter(config('services.fcm')))
+                ->setToken('123456')
                 ->setTitle('Hello')
                 ->setBody('Hello')
         );
 
-        NotificationService::send($notification);
+        return NotificationService::send($notification);
     }
 }

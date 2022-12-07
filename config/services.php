@@ -33,4 +33,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'fcm' => [
+        'host' => env('FCM_HOST', 'https://fcm.googleapis.com/fcm/send'),
+        'secret' => env('FCM_SECRET_FILE', './content/moon.php'),
+    ],
 ];

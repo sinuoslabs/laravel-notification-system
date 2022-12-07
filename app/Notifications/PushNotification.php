@@ -9,9 +9,9 @@ class PushNotification implements NotificationInterface
 {
     private FcmAdapter $provider;
 
-    public function __construct(FcmAdapter $provider)
+    public function __construct(FcmAdapter $fcmAdapter)
     {
-        $this->provider = $provider;
+        $this->provider = $fcmAdapter;
     }
 
     public function send(): mixed

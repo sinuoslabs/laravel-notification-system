@@ -4,9 +4,22 @@ namespace App\Adapters\Concerns;
 
 trait FcmMessageTrait
 {
+    private string $token;
+
     private string $title;
 
     private string $body;
+
+    private array $data;
+
+    private array $android;
+
+    private array $apns;
+
+    public function getToken(): string
+    {
+        return $this->token;
+    }
 
     public function getTitle(): string
     {
@@ -16,6 +29,13 @@ trait FcmMessageTrait
     public function getBody(): string
     {
         return $this->body;
+    }
+
+    public function setToken($token): static
+    {
+        $this->token = $token;
+
+        return $this;
     }
 
     public function setTitle($title): static

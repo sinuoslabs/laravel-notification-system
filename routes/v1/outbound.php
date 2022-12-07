@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('outbound')->group(function () {
     Route::post('send', NotificationController::class);
 
-    Route::post('sms', SmsNotificationController::class);
+    Route::post('sms/send', SmsNotificationController::class);
 
-    Route::post('email', EmailNotificationController::class);
+    Route::post('email/send', EmailNotificationController::class);
 
-    Route::post('fcm', FcmNotificationController::class);
+    Route::post('fcm/send', FcmNotificationController::class);
 });

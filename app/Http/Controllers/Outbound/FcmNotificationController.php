@@ -7,7 +7,6 @@ namespace App\Http\Controllers\Outbound;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Outbound\FcmRequest;
 use App\Jobs\Outbound\ProcessFcmNotification;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class FcmNotificationController extends Controller
@@ -16,11 +15,14 @@ class FcmNotificationController extends Controller
      * Handle the incoming request.
      *
      * @param FcmRequest $request
-     * @return Response
+     * @return bool
      */
-    public function __invoke(FcmRequest $request)
+    public function __invoke(FcmRequest $request): bool
     {
-        //
-        ProcessFcmNotification::dispatch()->onQueue('fcm');
+        ProcessFcmNotification::dispatch()
+            ->onQueue('fcm')
+            ->delay(5);
+
+        return true;
     }
 }

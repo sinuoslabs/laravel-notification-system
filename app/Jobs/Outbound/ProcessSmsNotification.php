@@ -2,6 +2,9 @@
 
 namespace App\Jobs\Outbound;
 
+use App\Adapters\TwilioAdapter;
+use App\Notifications\SmsNotification;
+use App\Services\NotificationService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -26,10 +29,15 @@ class ProcessSmsNotification implements ShouldQueue
     /**
      * Execute the job.
      *
-     * @return void
+     * @return mixed
      */
-    public function handle()
+    public function handle(): mixed
     {
-        //
+        $notification = new SmsNotification((new TwilioAdapter())
+            ->setRecipient('4444444444')
+            ->setMessage('Welcome to my channel')
+        );
+
+        return NotificationService::send($notification);
     }
 }

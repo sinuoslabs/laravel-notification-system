@@ -8,8 +8,11 @@ class TwilioAdapter
 {
     use TwilioMessageTrait;
 
-    public function toTwilio(): void
+    public function toTwilio(): bool|string
     {
-        //
+        return json_encode([
+            'recipient' => $this->getRecipient(),
+            'message' => $this->getMessage(),
+        ]);
     }
 }

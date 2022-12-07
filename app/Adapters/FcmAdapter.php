@@ -8,8 +8,26 @@ class FcmAdapter
 {
     use FcmMessageTrait;
 
-    public function toFCM(): mixed
+    private array $credentials;
+
+    public function __construct(array $credentials)
     {
-        //
+        $this->credentials = $credentials;
+    }
+
+    public function toFCM(): string|bool
+    {
+        return json_encode([
+            'message' => [
+                'token' => $this->getToken(),
+                'notification' => [
+                    'title' => $this->getTitle(),
+                    'body' => $this->getBody(),
+                ],
+                'data' => [],
+                'apns' => [],
+                'android' => [],
+            ]
+        ]);
     }
 }
