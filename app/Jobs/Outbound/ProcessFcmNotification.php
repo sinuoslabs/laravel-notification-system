@@ -2,7 +2,7 @@
 
 namespace App\Jobs\Outbound;
 
-use App\Channels\FcmProvider;
+use App\Adapters\FcmAdapter;
 use App\Notifications\PushNotification;
 use App\Services\NotificationService;
 use Illuminate\Bus\Queueable;
@@ -34,7 +34,7 @@ class ProcessFcmNotification implements ShouldQueue
     public function handle(): void
     {
         $notification = new PushNotification(
-            (new FcmProvider())
+            (new FcmAdapter())
                 ->setTitle('Hello')
                 ->setBody('Hello')
         );

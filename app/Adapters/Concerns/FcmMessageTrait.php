@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Channels;
+namespace App\Adapters\Concerns;
 
-class FcmProvider
+trait FcmMessageTrait
 {
     private string $title;
 

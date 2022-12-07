@@ -2,20 +2,20 @@
 
 namespace App\Notifications;
 
-use App\Channels\FcmProvider;
+use App\Adapters\FcmAdapter;
 use App\Services\Contracts\NotificationInterface;
 
 class PushNotification implements NotificationInterface
 {
-    private FcmProvider $provider;
+    private FcmAdapter $provider;
 
-    public function __construct(FcmProvider $provider)
+    public function __construct(FcmAdapter $provider)
     {
         $this->provider = $provider;
     }
 
-    public function send()
+    public function send(): mixed
     {
-        $body = $this->provider->getBody();
+        return $this->provider->toFCM();
     }
 }

@@ -4,5 +4,5 @@ namespace App\Services\Contracts;
 
 interface NotificationInterface
 {
-    public function send();
+    public function send(): mixed;
 }
