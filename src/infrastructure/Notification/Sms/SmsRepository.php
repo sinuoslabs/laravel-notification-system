@@ -2,7 +2,7 @@
 
 namespace PMT\infrastructure\Notification\Sms;
 
-use PMT\Core\Domain\Repositories\NotificationInterface;
+use LNS\Core\Domain\Repositories\NotificationInterface;
 
 class SmsRepository implements NotificationInterface
 {

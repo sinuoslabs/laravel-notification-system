@@ -2,7 +2,7 @@
 
 namespace PMT\infrastructure\Notification\Email;
 
-use PMT\Core\Domain\Repositories\NotificationInterface;
+use LNS\Core\Domain\Repositories\NotificationInterface;
 
 class EmailRepository implements NotificationInterface
 {

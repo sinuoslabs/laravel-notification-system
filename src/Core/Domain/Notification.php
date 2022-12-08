@@ -1,6 +1,6 @@
 <?php
 
-namespace PMT\Core\Domain;
+namespace LNS\Core\Domain;
 
 class Notification
 {
