@@ -1,6 +1,6 @@
 <?php
 
-namespace LNS\Core\Domain\Entities;
+namespace Domain\Entities;
 
 class Template
 {

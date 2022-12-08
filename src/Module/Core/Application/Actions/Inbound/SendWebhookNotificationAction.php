@@ -1,10 +1,10 @@
 <?php
 
-namespace Application\Actions\Outbound;
+namespace Application\Actions\Inbound;
 
 use Domain\Contracts\SendNotificationActionInterface;
 
-class SendEmailNotificationAction implements SendNotificationActionInterface
+class SendWebhookNotificationAction implements SendNotificationActionInterface
 {
     public function execute()
     {

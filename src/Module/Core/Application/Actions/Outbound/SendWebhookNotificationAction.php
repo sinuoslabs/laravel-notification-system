@@ -1,8 +1,8 @@
 <?php
 
-namespace LNS\Core\Application\Actions\Outbound;
+namespace Application\Actions\Outbound;
 
-use LNS\Core\Domain\Contracts\SendNotificationActionInterface;
+use Domain\Contracts\SendNotificationActionInterface;
 
 class SendWebhookNotificationAction implements SendNotificationActionInterface
 {

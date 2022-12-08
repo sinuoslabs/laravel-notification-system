@@ -1,6 +1,6 @@
 <?php
 
-namespace LNS\Core\Domain\Repositories;
+namespace Domain\Repositories;
 
 interface NotificationInterface
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LNS\Core\Domain\Entities;
+namespace Domain\Entities;
 
-use LNS\Core\Domain\ValueObjects\MessageId;
+use Domain\ValueObjects\MessageId;
 
 class Message
 {

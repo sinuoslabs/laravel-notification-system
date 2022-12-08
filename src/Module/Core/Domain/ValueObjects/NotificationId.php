@@ -1,6 +1,6 @@
 <?php
 
-namespace LNS\Core\Domain\ValueObjects;
+namespace Domain\ValueObjects;
 
 use Shared\Domain\identifier;
 

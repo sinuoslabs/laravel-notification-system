@@ -1,8 +1,8 @@
 <?php
 
-namespace LNS\Core\Domain\Entities;
+namespace Domain\Entities;
 
-use LNS\Core\Domain\ValueObjects\NotificationId;
+use Domain\ValueObjects\NotificationId;
 
 class Notification
 {
