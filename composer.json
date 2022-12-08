@@ -25,7 +25,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "LNS\\": "src/Module/"
+            "Application\\" : "src/Module/Core/Application",
+            "Domain\\" : "src/Module/Core/Domain",
+            "Infrastructure\\" : "src/Module/Infrastructure",
+            "Shared\\" : "src/Shared"
         }
     },
     "autoload-dev": {
