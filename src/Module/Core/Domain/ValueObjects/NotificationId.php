@@ -2,8 +2,8 @@
 
 namespace Domain\ValueObjects;
 
-use Shared\Domain\identifier;
+use Shared\Domain\Identifier;
 
-class NotificationId extends identifier
+class NotificationId extends Identifier
 {
 }

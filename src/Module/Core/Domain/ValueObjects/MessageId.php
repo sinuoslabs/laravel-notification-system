@@ -2,8 +2,8 @@
 
 namespace Domain\ValueObjects;
 
-use Shared\Domain\identifier;
+use Shared\Domain\Identifier;
 
-class MessageId extends identifier
+class MessageId extends Identifier
 {
 }
