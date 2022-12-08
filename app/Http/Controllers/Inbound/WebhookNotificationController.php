@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Outbound;
+namespace App\Http\Controllers\Inbound;
 
 use App\Http\Requests\Outbound\FcmRequest;
 
