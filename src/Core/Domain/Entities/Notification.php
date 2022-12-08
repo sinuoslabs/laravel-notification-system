@@ -1,6 +1,6 @@
 <?php
 
-namespace LNS\Core\Domain;
+namespace LNS\Core\Domain\Entities;
 
 use LNS\Core\Domain\ValueObjects\NotificationId;
 
