@@ -10,22 +10,21 @@ class Message
 {
     public MessageId $messageId;
 
-    public ?string $title;
+    public ?string $subject;
 
     public string $body;
 
     /**
      * @param MessageId $messageId
-     * @param string|null $title
+     * @param string|null $subject
      * @param string $body
      */
-    public function __construct(MessageId $messageId, ?string $title, string $body)
+    public function __construct(MessageId $messageId, ?string $subject, string $body)
     {
         $this->messageId = $messageId;
-        $this->title = $title;
+        $this->subject = $subject;
         $this->body = $body;
     }
-
 
     /**
      * @return MessageId
@@ -46,17 +45,17 @@ class Message
     /**
      * @return string|null
      */
-    public function getTitle(): ?string
+    public function getSubject(): ?string
     {
-        return $this->title;
+        return $this->subject;
     }
 
     /**
-     * @param string|null $title
+     * @param string|null $subject
      */
-    public function setTitle(?string $title): void
+    public function setSubject(?string $subject): void
     {
-        $this->title = $title;
+        $this->subject = $subject;
     }
 
     /**
