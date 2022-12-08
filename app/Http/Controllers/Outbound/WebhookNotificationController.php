@@ -9,7 +9,7 @@ use App\Http\Requests\Outbound\FcmRequest;
 use App\Jobs\Outbound\ProcessFcmNotification;
 use Illuminate\Http\Response;
 
-class FcmNotificationController extends Controller
+class WebhookNotificationController extends Controller
 {
     /**
      * Handle the incoming request.
