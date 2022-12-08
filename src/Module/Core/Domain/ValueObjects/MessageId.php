@@ -2,8 +2,8 @@
 
 namespace LNS\Core\Domain\ValueObjects;
 
-use Shared\Domain\uuid;
+use Shared\Domain\identifier;
 
-class MessageId extends uuid
+class MessageId extends identifier
 {
 }

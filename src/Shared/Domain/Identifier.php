@@ -2,13 +2,16 @@
 
 namespace Shared\Domain;
 
-abstract class uuid
+use InvalidArgumentException;
+use Ramsey\Uuid\Uuid;
+
+abstract class Identifier
 {
     private string $value;
 
     public function __construct(string $id)
     {
-        if (!\Ramsey\Uuid\Uuid::isValid($id)) {
+        if (!Uuid::isValid($id)) {
             throw new InvalidArgumentException(
                 sprintf('<%s> does not allow the id <%s>.', static::class, $id)
             );

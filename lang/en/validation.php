@@ -141,7 +141,7 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'uppercase' => 'The :attribute must be uppercase.',
     'url' => 'The :attribute must be a valid URL.',
-    'uuid' => 'The :attribute must be a valid UUID.',
+    'identifier' => 'The :attribute must be a valid UUID.',
 
     /*
     |--------------------------------------------------------------------------
