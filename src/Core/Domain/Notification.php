@@ -2,30 +2,40 @@
 
 namespace LNS\Core\Domain;
 
+use LNS\Core\Domain\ValueObjects\NotificationId;
+
 class Notification
 {
-    public string $id;
+    public NotificationId $id;
 
     public string $subject;
 
     public string $content;
 
-    public string $createdAt;
-
-    public string $updatedAt;
+    /**
+     * @param NotificationId $id
+     * @param string $subject
+     * @param string $content
+     */
+    public function __construct(NotificationId $id, string $subject, string $content)
+    {
+        $this->id = $id;
+        $this->subject = $subject;
+        $this->content = $content;
+    }
 
     /**
-     * @return string
+     * @return NotificationId
      */
-    public function getId(): string
+    public function getId(): NotificationId
     {
         return $this->id;
     }
 
     /**
-     * @param string $id
+     * @param NotificationId $id
      */
-    public function setId(string $id): void
+    public function setId(NotificationId $id): void
     {
         $this->id = $id;
     }
@@ -60,37 +70,5 @@ class Notification
     public function setContent(string $content): void
     {
         $this->content = $content;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCreatedAt(): string
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @param string $createdAt
-     */
-    public function setCreatedAt(string $createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUpdatedAt(): string
-    {
-        return $this->updatedAt;
-    }
-
-    /**
-     * @param string $updatedAt
-     */
-    public function setUpdatedAt(string $updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
     }
 }
