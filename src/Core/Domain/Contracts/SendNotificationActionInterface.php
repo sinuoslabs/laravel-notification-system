@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Contracts;
+namespace LNS\Core\Domain\Contracts;
 
 interface SendNotificationActionInterface
 {

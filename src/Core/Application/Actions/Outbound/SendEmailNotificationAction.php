@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Actions\Outbound;
+namespace LNS\Core\Application\Actions\Outbound;
 
-use App\Actions\Contracts\SendNotificationActionInterface;
+use LNS\Core\Domain\Contracts\SendNotificationActionInterface;
 
 class SendEmailNotificationAction implements SendNotificationActionInterface
 {
