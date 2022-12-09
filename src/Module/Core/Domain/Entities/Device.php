@@ -6,5 +6,7 @@ namespace Domain\Entities;
 
 class Device
 {
+    public string $deviceToken;
 
+    public \DateTimeInterface $lastLoggedAt;
 }

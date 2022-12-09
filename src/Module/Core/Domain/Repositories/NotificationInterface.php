@@ -2,7 +2,9 @@
 
 namespace Domain\Repositories;
 
+use Domain\Entities\Message;
+
 interface NotificationInterface
 {
-    public function send();
+    public function send(Message $message);
 }

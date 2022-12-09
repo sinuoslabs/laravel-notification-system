@@ -6,5 +6,7 @@ namespace Domain\Entities;
 
 class Template
 {
+    public string $name;
 
+    public array $content = [];
 }
