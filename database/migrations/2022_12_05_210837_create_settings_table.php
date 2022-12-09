@@ -21,8 +21,8 @@ return new class() extends Migration
             $table->enum('channel', [
                 'EMAIL',
                 'SMS',
-                'PUSH_NOTIFICATION',
-                'IN_APP_PUSH_NOTIFICATION',
+                'PUSH',
+                'IN_APP',
                 'WEBHOOK',
             ])->index();
             $table->boolean('opt-in')->default(true)->index();
