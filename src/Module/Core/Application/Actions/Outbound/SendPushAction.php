@@ -8,8 +8,6 @@ class SendPushAction implements ActionInterface
 {
     public function execute()
     {
-        return json_encode([
-            'status' => 200
-        ]);
+        return response()->json(['status' => 200]);
     }
 }
