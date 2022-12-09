@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Repositories;
+namespace Domain\Contracts;
 
 use Domain\Entities\Message;
 

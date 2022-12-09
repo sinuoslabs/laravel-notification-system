@@ -2,9 +2,9 @@
 
 namespace Application\Actions\Inbound;
 
-use Domain\Contracts\SendNotificationActionInterface;
+use Domain\Contracts\ActionInterface;
 
-class SendWebhookNotificationAction implements SendNotificationActionInterface
+class SendWebhookAction implements ActionInterface
 {
     public function execute()
     {
