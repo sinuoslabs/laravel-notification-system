@@ -1,6 +1,6 @@
 <?php
 
-namespace Infrastructure\adapters;
+namespace Infrastructure\Adapters;
 
 use Domain\Contracts\NotificationInterface;
 use Domain\Entities\Message;
