@@ -2,7 +2,13 @@
 
 namespace Infrastructure\Providers\Email;
 
-class NexmoProvider
-{
+use Domain\Contracts\NotificationInterface;
+use Domain\Entities\Message;
 
+class NexmoProvider implements NotificationInterface
+{
+    public function send(Message $message)
+    {
+        // TODO: Implement send() method.
+    }
 }

@@ -2,7 +2,13 @@
 
 namespace Infrastructure\Providers\Push;
 
-class FcmProvider
-{
+use Domain\Contracts\NotificationInterface;
+use Domain\Entities\Message;
 
+class FcmProvider implements NotificationInterface
+{
+    public function send(Message $message)
+    {
+        // TODO: Implement send() method.
+    }
 }

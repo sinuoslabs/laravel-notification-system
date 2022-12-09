@@ -2,7 +2,13 @@
 
 namespace Infrastructure\Providers\Sms;
 
-class TwilioProvider
-{
+use Domain\Contracts\NotificationInterface;
+use Domain\Entities\Message;
 
+class TwilioProvider implements NotificationInterface
+{
+    public function send(Message $message)
+    {
+        // TODO: Implement send() method.
+    }
 }
