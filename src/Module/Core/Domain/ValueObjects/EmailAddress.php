@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Domain\ValueObjects;
 
 class EmailAddress
@@ -10,7 +12,7 @@ class EmailAddress
     {
         if (!filter_var($emailAddress, FILTER_VALIDATE_EMAIL)) {
             throw new \InvalidArgumentException(
-                sprintf('<%s> does invalid email address <%s>.', static::class, $emailAddress)
+                sprintf('<%s> invalid email address.', $emailAddress)
             );
         }
 
