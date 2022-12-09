@@ -10,5 +10,5 @@ class Settings
 {
     public Channel $channel;
 
-    public bool $optIn;
+    public bool $optIn = false;
 }
