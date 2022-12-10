@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Domain\Entities;
 
+use Domain\ValueObjects\Message;
 use Shared\Domain\Entity;
 
 class Notification extends Entity

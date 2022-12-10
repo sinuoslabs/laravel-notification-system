@@ -3,7 +3,7 @@
 namespace Infrastructure\Adapters;
 
 use Domain\Contracts\NotificationProviderInterface;
-use Domain\Entities\Message;
+use Domain\ValueObjects\Message;
 
 class NotificationAdapter
 {

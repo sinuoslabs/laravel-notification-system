@@ -2,26 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Domain\Entities;
+namespace Domain\ValueObjects;
 
-use Shared\Domain\Entity;
-
-class Message extends Entity
+class Message
 {
     public ?string $subject;
 
     public string $body;
 
-    /**
-     * @param string|null $subject
-     * @param string $body
-     */
     public function __construct(?string $subject, string $body)
     {
+        if ($body === '') {
+            throw new \InvalidArgumentException('Body cannot be empty.');
+        }
+
         $this->subject = $subject;
         $this->body = $body;
-
-        parent::__construct();
     }
 
     /**
@@ -33,14 +29,6 @@ class Message extends Entity
     }
 
     /**
-     * @param string|null $subject
-     */
-    public function setSubject(?string $subject): void
-    {
-        $this->subject = $subject;
-    }
-
-    /**
      * @return string
      */
     public function getBody(): string
@@ -48,11 +36,8 @@ class Message extends Entity
         return $this->body;
     }
 
-    /**
-     * @param string $body
-     */
-    public function setBody(string $body): void
+    public function __toString(): string
     {
-        $this->body = $body;
+        return $this->getBody();
     }
 }

@@ -3,7 +3,7 @@
 namespace Infrastructure\Providers\Email;
 
 use Domain\Contracts\NotificationProviderInterface;
-use Domain\Entities\Message;
+use Domain\ValueObjects\Message;
 
 class SendgridProvider implements NotificationProviderInterface
 {
