@@ -8,7 +8,7 @@ class PhoneNumber
 
     public function __construct(string $phoneNumber)
     {
-        $regex = '/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/';
+        $regex = '/^\+\d{1,3} \d{3} \d{3}-\d{4}$/';
 
         if (!preg_match($regex, $phoneNumber)) {
             throw new \InvalidArgumentException(
