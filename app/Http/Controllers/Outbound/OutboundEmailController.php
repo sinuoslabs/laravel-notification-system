@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\EmailRequest;
-use Domain\Contracts\ActionInterface;
+use Domain\Actions\Outbound\OutboundEmailActionInterface;
 
 class OutboundEmailController
 {
-    private ActionInterface $action;
+    private OutboundEmailActionInterface $action;
 
-    public function __construct(ActionInterface $action)
+    public function __construct(OutboundEmailActionInterface $action)
     {
         $this->action = $action;
     }

@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\FcmRequest;
-use Domain\Contracts\ActionInterface;
+use Domain\Actions\Outbound\OutboundPushActionInterface;
 
 class OutboundPushController
 {
-    private ActionInterface $action;
+    private OutboundPushActionInterface $action;
 
-    public function __construct(ActionInterface $action)
+    public function __construct(OutboundPushActionInterface $action)
     {
         $this->action = $action;
     }

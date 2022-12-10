@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\SmsRequest;
-use Domain\Contracts\ActionInterface;
+use Domain\Actions\Outbound\OutboundSmsActionInterface;
 
 class OutboundSmsController
 {
-    private ActionInterface $action;
+    private OutboundSmsActionInterface $action;
 
-    public function __construct(ActionInterface $action)
+    public function __construct(OutboundSmsActionInterface $action)
     {
         $this->action = $action;
     }

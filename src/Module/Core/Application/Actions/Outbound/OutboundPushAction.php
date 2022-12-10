@@ -2,9 +2,9 @@
 
 namespace Application\Actions\Outbound;
 
-use Domain\Contracts\ActionInterface;
+use Domain\Actions\Outbound\OutboundPushActionInterface;
 
-class OutboundSendPushAction implements ActionInterface
+class OutboundPushAction implements OutboundPushActionInterface
 {
     public function execute()
     {

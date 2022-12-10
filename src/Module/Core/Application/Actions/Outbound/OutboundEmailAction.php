@@ -2,9 +2,9 @@
 
 namespace Application\Actions\Outbound;
 
-use Domain\Contracts\ActionInterface;
+use Domain\Actions\Outbound\OutboundEmailActionInterface;
 
-class OutboundSendWebhookAction implements ActionInterface
+class OutboundEmailAction implements OutboundEmailActionInterface
 {
     public function execute()
     {

@@ -2,9 +2,9 @@
 
 namespace Application\Actions\Outbound;
 
-use Domain\Contracts\ActionInterface;
+use Domain\Actions\Outbound\OutboundSmsActionInterface;
 
-class OutboundSendSmsAction implements ActionInterface
+class OutboundSmsAction implements OutboundSmsActionInterface
 {
     public function execute()
     {
