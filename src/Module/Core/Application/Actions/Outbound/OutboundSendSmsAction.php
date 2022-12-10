@@ -4,7 +4,7 @@ namespace Application\Actions\Outbound;
 
 use Domain\Contracts\ActionInterface;
 
-class SendEmailAction implements ActionInterface
+class OutboundSendSmsAction implements ActionInterface
 {
     public function execute()
     {

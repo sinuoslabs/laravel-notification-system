@@ -7,7 +7,7 @@ namespace App\Http\Controllers\Outbound;
 use App\Http\Requests\Outbound\FcmRequest;
 use Domain\Contracts\ActionInterface;
 
-class PushController
+class OutboundWebhookController
 {
     private ActionInterface $action;
 
@@ -20,7 +20,6 @@ class PushController
      * Handle the incoming request.
      *
      * @param FcmRequest $request
-     * @return bool
      */
     public function __invoke(FcmRequest $request)
     {

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Outbound;
 
-use App\Http\Requests\Outbound\SmsRequest;
+use App\Http\Requests\Outbound\FcmRequest;
 use Domain\Contracts\ActionInterface;
 
-class SmsController
+class OutboundPushController
 {
     private ActionInterface $action;
 
@@ -19,9 +19,10 @@ class SmsController
     /**
      * Handle the incoming request.
      *
-     * @param SmsRequest $request
+     * @param FcmRequest $request
+     * @return bool
      */
-    public function __invoke(SmsRequest $request)
+    public function __invoke(FcmRequest $request)
     {
         return $this->action->execute();
     }

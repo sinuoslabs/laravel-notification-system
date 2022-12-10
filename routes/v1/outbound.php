@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\Outbound\EmailController;
-use App\Http\Controllers\Outbound\PushController;
-use App\Http\Controllers\Outbound\NotificationController;
-use App\Http\Controllers\Outbound\SmsController;
-use App\Http\Controllers\Outbound\WebhookController;
+use App\Http\Controllers\Outbound\OutboundEmailController;
+use App\Http\Controllers\Outbound\OutboundPushController;
+use App\Http\Controllers\Outbound\OutboundNotificationController;
+use App\Http\Controllers\Outbound\OutboundSmsController;
+use App\Http\Controllers\Outbound\OutboundWebhookController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('outbound')->group(function () {
-    Route::post('send', NotificationController::class);
+    Route::post('send', OutboundNotificationController::class);
 
-    Route::post('sms/send', SmsController::class);
+    Route::post('sms/send', OutboundSmsController::class);
 
-    Route::post('email/send', EmailController::class);
+    Route::post('email/send', OutboundEmailController::class);
 
-    Route::post('fcm/send', PushController::class);
+    Route::post('fcm/send', OutboundPushController::class);
 
-    Route::post('webhook', WebhookController::class);
+    Route::post('webhook', OutboundWebhookController::class);
 });

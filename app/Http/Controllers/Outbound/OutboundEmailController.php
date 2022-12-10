@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Outbound;
 
+use App\Http\Requests\Outbound\EmailRequest;
 use Domain\Contracts\ActionInterface;
-use Illuminate\Http\Request;
 
-class NotificationController
+class OutboundEmailController
 {
     private ActionInterface $action;
 
@@ -19,9 +19,9 @@ class NotificationController
     /**
      * Handle the incoming request.
      *
-     * @param  Request  $request
+     * @param EmailRequest $request
      */
-    public function __invoke(Request $request)
+    public function __invoke(EmailRequest $request)
     {
         return $this->action->execute();
     }

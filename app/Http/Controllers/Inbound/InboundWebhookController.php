@@ -7,7 +7,7 @@ namespace App\Http\Controllers\Inbound;
 use App\Http\Requests\Outbound\FcmRequest;
 use Domain\Contracts\ActionInterface;
 
-class WebhookController
+class InboundWebhookController
 {
     private ActionInterface $action;
 

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Outbound;
 
-use App\Http\Requests\Outbound\FcmRequest;
 use Domain\Contracts\ActionInterface;
+use Illuminate\Http\Request;
 
-class WebhookController
+class OutboundNotificationController
 {
     private ActionInterface $action;
 
@@ -19,9 +19,9 @@ class WebhookController
     /**
      * Handle the incoming request.
      *
-     * @param FcmRequest $request
+     * @param  Request  $request
      */
-    public function __invoke(FcmRequest $request)
+    public function __invoke(Request $request)
     {
         return $this->action->execute();
     }

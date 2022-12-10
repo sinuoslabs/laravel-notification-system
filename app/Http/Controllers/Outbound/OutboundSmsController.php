@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Outbound;
 
-use App\Http\Requests\Outbound\EmailRequest;
+use App\Http\Requests\Outbound\SmsRequest;
 use Domain\Contracts\ActionInterface;
 
-class EmailController
+class OutboundSmsController
 {
     private ActionInterface $action;
 
@@ -19,9 +19,9 @@ class EmailController
     /**
      * Handle the incoming request.
      *
-     * @param EmailRequest $request
+     * @param SmsRequest $request
      */
-    public function __invoke(EmailRequest $request)
+    public function __invoke(SmsRequest $request)
     {
         return $this->action->execute();
     }
