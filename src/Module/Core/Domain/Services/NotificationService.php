@@ -27,4 +27,14 @@ class NotificationService
     {
         //
     }
+
+    public function sendPushNotification()
+    {
+        //
+    }
+
+    public function sendInAppNotification()
+    {
+        //
+    }
 }
