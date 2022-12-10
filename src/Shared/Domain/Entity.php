@@ -19,8 +19,8 @@ abstract class Entity
     public function __construct()
     {
         $this->id = Uuid::uuid4();
-        $this->createdAt =  now();
-        $this->updatedAt =  now();
+        $this->createdAt = now();
+        $this->updatedAt = now();
     }
 
     /**
