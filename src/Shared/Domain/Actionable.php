@@ -9,7 +9,7 @@ abstract class Actionable implements ActionInterface
 {
     public string $correlationId;
 
-    public function __construct(?Identifier $identifier)
+    public function __construct(string $identifier)
     {
         if ($identifier) {
             $this->correlationId = $identifier;
