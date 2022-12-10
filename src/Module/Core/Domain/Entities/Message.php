@@ -4,42 +4,24 @@ declare(strict_types=1);
 
 namespace Domain\Entities;
 
-use Domain\ValueObjects\MessageId;
+use Shared\Domain\Entity;
 
-class Message
+class Message extends Entity
 {
-    public MessageId $messageId;
-
     public ?string $subject;
 
     public string $body;
 
     /**
-     * @param MessageId $messageId
      * @param string|null $subject
      * @param string $body
      */
-    public function __construct(MessageId $messageId, ?string $subject, string $body)
+    public function __construct(?string $subject, string $body)
     {
-        $this->messageId = $messageId;
         $this->subject = $subject;
         $this->body = $body;
-    }
 
-    /**
-     * @return MessageId
-     */
-    public function getMessageId(): MessageId
-    {
-        return $this->messageId;
-    }
-
-    /**
-     * @param MessageId $messageId
-     */
-    public function setMessageId(MessageId $messageId): void
-    {
-        $this->messageId = $messageId;
+        parent::__construct();
     }
 
     /**

@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Domain\Entities;
 
-use Domain\ValueObjects\NotificationId;
+use Shared\Domain\Entity;
 
-class Notification
+class Notification extends Entity
 {
-    public NotificationId $id;
-
     public User $from;
 
     public User $to;
@@ -17,33 +15,17 @@ class Notification
     public Message $message;
 
     /**
-     * @param NotificationId $id
      * @param User $from
      * @param User $to
      * @param Message $message
      */
-    public function __construct(NotificationId $id, User $from, User $to, Message $message)
+    public function __construct(User $from, User $to, Message $message)
     {
-        $this->id = $id;
         $this->from = $from;
         $this->to = $to;
         $this->message = $message;
-    }
 
-    /**
-     * @return NotificationId
-     */
-    public function getId(): NotificationId
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param NotificationId $id
-     */
-    public function setId(NotificationId $id): void
-    {
-        $this->id = $id;
+        parent::__construct();
     }
 
     /**

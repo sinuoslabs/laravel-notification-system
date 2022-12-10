@@ -4,12 +4,10 @@ namespace Domain\Entities;
 
 use Domain\ValueObjects\EmailAddress;
 use Domain\ValueObjects\PhoneNumber;
-use Domain\ValueObjects\UserId;
+use Shared\Domain\Entity;
 
-class User
+class User extends Entity
 {
-    public UserId $id;
-
     public ?string $name;
 
     public ?EmailAddress $email;
@@ -17,33 +15,17 @@ class User
     public ?PhoneNumber $phone;
 
     /**
-     * @param UserId $id
      * @param string|null $name
      * @param EmailAddress|null $email
      * @param PhoneNumber|null $phone
      */
-    public function __construct(UserId $id, ?string $name, ?EmailAddress $email, ?PhoneNumber $phone)
+    public function __construct(?string $name, ?EmailAddress $email, ?PhoneNumber $phone)
     {
-        $this->id = $id;
         $this->name = $name;
         $this->email = $email;
         $this->phone = $phone;
-    }
 
-    /**
-     * @return UserId
-     */
-    public function getId(): UserId
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param UserId $id
-     */
-    public function setId(UserId $id): void
-    {
-        $this->id = $id;
+        parent::__construct();
     }
 
     /**

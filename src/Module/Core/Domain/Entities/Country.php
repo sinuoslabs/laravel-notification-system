@@ -2,7 +2,9 @@
 
 namespace Domain\Entities;
 
-class Country
+use Shared\Domain\Entity;
+
+class Country extends Entity
 {
 
 }

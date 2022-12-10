@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Domain\Entities;
 
-class Template
+use Shared\Domain\Entity;
+
+class Template extends Entity
 {
     public string $name;
 
