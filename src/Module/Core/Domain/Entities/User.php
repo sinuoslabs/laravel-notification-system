@@ -14,16 +14,20 @@ class User extends Entity
 
     public ?PhoneNumber $phone;
 
+    public Country $country;
+
     /**
      * @param string|null $name
      * @param EmailAddress|null $email
      * @param PhoneNumber|null $phone
+     * @param Country $country
      */
-    public function __construct(?string $name, ?EmailAddress $email, ?PhoneNumber $phone)
+    public function __construct(?string $name, ?EmailAddress $email, ?PhoneNumber $phone, Country $country)
     {
         $this->name = $name;
         $this->email = $email;
         $this->phone = $phone;
+        $this->country = $country;
 
         parent::__construct();
     }
@@ -74,5 +78,21 @@ class User extends Entity
     public function setPhone(?PhoneNumber $phone): void
     {
         $this->phone = $phone;
+    }
+
+    /**
+     * @return Country
+     */
+    public function getCountry(): Country
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Country $country
+     */
+    public function setCountry(Country $country): void
+    {
+        $this->country = $country;
     }
 }
