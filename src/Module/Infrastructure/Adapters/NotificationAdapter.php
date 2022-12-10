@@ -2,14 +2,14 @@
 
 namespace Infrastructure\Adapters;
 
-use Domain\Contracts\NotificationInterface;
+use Domain\Contracts\NotificationProviderInterface;
 use Domain\Entities\Message;
 
 class NotificationAdapter
 {
-    private NotificationInterface $notification;
+    private NotificationProviderInterface $notification;
 
-    public function __construct(NotificationInterface $notification)
+    public function __construct(NotificationProviderInterface $notification)
     {
         $this->notification = $notification;
     }

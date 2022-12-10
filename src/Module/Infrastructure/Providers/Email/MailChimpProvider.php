@@ -2,10 +2,10 @@
 
 namespace Infrastructure\Providers\Email;
 
-use Domain\Contracts\NotificationInterface;
+use Domain\Contracts\NotificationProviderInterface;
 use Domain\Entities\Message;
 
-class MailChimpProvider implements NotificationInterface
+class MailChimpProvider implements NotificationProviderInterface
 {
     public function send(Message $message)
     {

@@ -1,22 +1,29 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Domain\Services;
 
-use Domain\Contracts\NotificationInterface;
+use Domain\Contracts\NotificationProviderInterface;
 
 class NotificationService
 {
-    public NotificationInterface $notification;
+    public NotificationProviderInterface $notification;
 
     /**
-     * @param NotificationInterface $notification
+     * @param NotificationProviderInterface $notification
      */
-    public function __construct(NotificationInterface $notification)
+    public function __construct(NotificationProviderInterface $notification)
     {
         $this->notification = $notification;
     }
 
-    public function creatNotification()
+    public function sendEmailNotification()
+    {
+        //
+    }
+
+    public function sendSmsNotification()
     {
         //
     }

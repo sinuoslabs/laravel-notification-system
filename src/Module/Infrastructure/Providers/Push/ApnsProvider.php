@@ -2,10 +2,10 @@
 
 namespace Infrastructure\Providers\Push;
 
-use Domain\Contracts\NotificationInterface;
+use Domain\Contracts\NotificationProviderInterface;
 use Domain\Entities\Message;
 
-class ApnsProvider implements NotificationInterface
+class ApnsProvider implements NotificationProviderInterface
 {
     public function send(Message $message)
     {
