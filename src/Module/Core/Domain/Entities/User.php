@@ -2,6 +2,8 @@
 
 namespace Domain\Entities;
 
+use Domain\ValueObjects\EmailAddress;
+use Domain\ValueObjects\PhoneNumber;
 use Domain\ValueObjects\UserId;
 
 class User
@@ -10,17 +12,17 @@ class User
 
     public ?string $name;
 
-    public ?string $email;
+    public ?EmailAddress $email;
 
-    public ?string $phone;
+    public ?PhoneNumber $phone;
 
     /**
      * @param UserId $id
      * @param string|null $name
-     * @param string|null $email
-     * @param string|null $phone
+     * @param EmailAddress|null $email
+     * @param PhoneNumber|null $phone
      */
-    public function __construct(UserId $id, ?string $name, ?string $email, ?string $phone)
+    public function __construct(UserId $id, ?string $name, ?EmailAddress $email, ?PhoneNumber $phone)
     {
         $this->id = $id;
         $this->name = $name;
@@ -61,33 +63,33 @@ class User
     }
 
     /**
-     * @return string|null
+     * @return EmailAddress|null
      */
-    public function getEmail(): ?string
+    public function getEmail(): ?EmailAddress
     {
         return $this->email;
     }
 
     /**
-     * @param string|null $email
+     * @param EmailAddress|null $email
      */
-    public function setEmail(?string $email): void
+    public function setEmail(?EmailAddress $email): void
     {
         $this->email = $email;
     }
 
     /**
-     * @return string|null
+     * @return PhoneNumber|null
      */
-    public function getPhone(): ?string
+    public function getPhone(): ?PhoneNumber
     {
         return $this->phone;
     }
 
     /**
-     * @param string|null $phone
+     * @param PhoneNumber|null $phone
      */
-    public function setPhone(?string $phone): void
+    public function setPhone(?PhoneNumber $phone): void
     {
         $this->phone = $phone;
     }
