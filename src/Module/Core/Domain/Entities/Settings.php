@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Domain\Entities;
 
-use Domain\Channel;
+use Domain\Enums\Channel;
 
 class Settings
 {
