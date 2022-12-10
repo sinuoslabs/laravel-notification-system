@@ -2,9 +2,10 @@
 
 namespace Shared\Domain;
 
+use Domain\Contracts\ActionInterface;
 use Ramsey\Uuid\Uuid;
 
-abstract class Actionable
+abstract class Actionable implements ActionInterface
 {
     public string $correlationId;
 
