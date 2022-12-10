@@ -10,7 +10,7 @@ class Message
 
     public string $body;
 
-    public function __construct(?string $subject, string $body)
+    public function __construct(string $body, ?string $subject = null)
     {
         if ($body === '') {
             throw new \InvalidArgumentException('Body cannot be empty.');
