@@ -3,8 +3,9 @@
 namespace Application\Actions\Outbound;
 
 use Domain\Contracts\ActionInterface;
+use Shared\Domain\Actionable;
 
-class OutboundSendWebhookAction implements ActionInterface
+class OutboundSendWebhookAction extends Actionable implements ActionInterface
 {
     public function execute()
     {

@@ -15,7 +15,6 @@ abstract class Entity
 
     protected ?DateTimeInterface $deletedAt = null;
 
-
     public function __construct()
     {
         $this->id = Uuid::uuid4();

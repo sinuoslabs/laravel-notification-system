@@ -3,8 +3,9 @@
 namespace Application\Actions\Outbound;
 
 use Domain\Contracts\ActionInterface;
+use Shared\Domain\Actionable;
 
-class OutboundSendEmailAction implements ActionInterface
+class OutboundSendEmailAction extends Actionable implements ActionInterface
 {
     public function execute()
     {
