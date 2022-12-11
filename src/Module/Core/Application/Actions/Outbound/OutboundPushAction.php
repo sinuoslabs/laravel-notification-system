@@ -3,7 +3,6 @@
 namespace Application\Actions\Outbound;
 
 use Domain\Actions\Outbound\OutboundPushActionInterface;
-use Domain\Enums\Channel;
 use Spatie\QueueableAction\QueueableAction;
 
 class OutboundPushAction implements OutboundPushActionInterface
@@ -12,7 +11,7 @@ class OutboundPushAction implements OutboundPushActionInterface
 
     public function __construct()
     {
-        $this->onQueue(Channel::PUSH->value);
+        //
     }
 
     public function execute()

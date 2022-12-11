@@ -3,7 +3,6 @@
 namespace Application\Actions\Outbound;
 
 use Domain\Actions\Outbound\OutboundSmsActionInterface;
-use Domain\Enums\Channel;
 use Spatie\QueueableAction\QueueableAction;
 
 class OutboundSmsAction implements OutboundSmsActionInterface
@@ -12,7 +11,7 @@ class OutboundSmsAction implements OutboundSmsActionInterface
 
     public function __construct()
     {
-        $this->onQueue(Channel::SMS->value);
+        //
     }
 
     public function execute()

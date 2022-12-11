@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\FcmRequest;
 use Domain\Actions\Outbound\OutboundWebhookActionInterface;
+use Domain\Enums\Channel;
 
 class OutboundWebhookController
 {
@@ -23,6 +24,10 @@ class OutboundWebhookController
      */
     public function __invoke(FcmRequest $request)
     {
-        return $this->action->execute();
+        $this->action
+            ->onQueue(Channel::WEBHOOK->value)
+            ->execute();
+
+        return 'ok';
     }
 }

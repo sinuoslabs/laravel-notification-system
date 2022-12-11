@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\EmailRequest;
 use Domain\Actions\Outbound\OutboundEmailActionInterface;
+use Domain\Enums\Channel;
 
 class OutboundEmailController
 {
@@ -23,6 +24,10 @@ class OutboundEmailController
      */
     public function __invoke(EmailRequest $request)
     {
-        return $this->action->execute();
+        $this->action
+            ->onQueue(Channel::EMAIL->value)
+            ->execute();
+
+        return 'ok';
     }
 }

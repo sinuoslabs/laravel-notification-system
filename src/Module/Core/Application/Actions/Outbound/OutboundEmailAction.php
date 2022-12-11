@@ -3,7 +3,6 @@
 namespace Application\Actions\Outbound;
 
 use Domain\Actions\Outbound\OutboundEmailActionInterface;
-use Domain\Enums\Channel;
 use Spatie\QueueableAction\QueueableAction;
 
 class OutboundEmailAction implements OutboundEmailActionInterface
@@ -12,7 +11,7 @@ class OutboundEmailAction implements OutboundEmailActionInterface
 
     public function __construct()
     {
-        $this->onQueue(Channel::EMAIL->value);
+        //
     }
 
     public function execute()

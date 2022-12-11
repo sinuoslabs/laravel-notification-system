@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\SmsRequest;
 use Domain\Actions\Outbound\OutboundSmsActionInterface;
+use Domain\Enums\Channel;
 
 class OutboundSmsController
 {
@@ -23,6 +24,10 @@ class OutboundSmsController
      */
     public function __invoke(SmsRequest $request)
     {
-        return $this->action->execute();
+        $this->action
+            ->onQueue(Channel::SMS->value)
+            ->execute();
+
+        return 'ok';
     }
 }
