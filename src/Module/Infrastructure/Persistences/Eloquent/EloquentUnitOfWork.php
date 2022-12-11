@@ -29,7 +29,7 @@ class EloquentUnitOfWork implements UnitOfWorkInterface
         } catch (\Exception $e) {
             // rollback transaction
             DB::rollBack();
-            Log::debug("[transaction rolled back] - {$e->getMessage()} with code {$e->getCode()}");
+            Log::error("[transaction rolled back] - {$e->getMessage()} with code {$e->getCode()}");
 
             throw $e;
         }
