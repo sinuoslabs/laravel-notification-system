@@ -23,12 +23,15 @@ class EloquentNotificationRepository implements NotificationRepositoryInterface
     public function saveNotification(Notification $notification)
     {
         NotificationModel::create([
+            'id' => $notification->getId(),
             'payload' => $notification->getPayload(),
             'user_id' => $notification->getUserId(),
             'processing_at' => $notification->getProcessingAt(),
             'notification_channel' => $notification->getNotificationChannel()->value,
             'notification_status' => $notification->getNotificationStatus()->value,
             'notification_type' => $notification->getNotificationType()->value,
+            'created_at' => $notification->getCreatedAt(),
+            'updated_at' => $notification->getUpdatedAt(),
         ]);
     }
 

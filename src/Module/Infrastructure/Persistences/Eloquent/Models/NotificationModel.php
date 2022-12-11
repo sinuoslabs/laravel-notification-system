@@ -21,12 +21,15 @@ class NotificationModel extends Model
     protected $table = 'notifications';
 
     protected $fillable = [
+        'id',
         'user_id',
         'payload',
         'notification_channel',
         'notification_status',
         'notification_type',
-        'processing_at'
+        'processing_at',
+        'created_at',
+        'updated_at',
     ];
 
     protected $casts = [
