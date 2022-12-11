@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Outbound;
+namespace Infrastructure\Web\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\SmsRequest;
 use Domain\Actions\Outbound\OutboundSmsActionInterface;

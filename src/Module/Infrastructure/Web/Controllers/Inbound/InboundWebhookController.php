@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Inbound;
+namespace Infrastructure\Web\Controllers\Inbound;
 
 use App\Http\Requests\Outbound\FcmRequest;
 use Domain\Contracts\ActionInterface;

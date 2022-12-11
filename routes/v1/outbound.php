@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\Outbound\OutboundEmailController;
-use App\Http\Controllers\Outbound\OutboundPushController;
-use App\Http\Controllers\Outbound\OutboundNotificationController;
-use App\Http\Controllers\Outbound\OutboundSmsController;
-use App\Http\Controllers\Outbound\OutboundWebhookController;
+use Infrastructure\Web\Controllers\Outbound\OutboundEmailController;
+use Infrastructure\Web\Controllers\Outbound\OutboundPushController;
+use Infrastructure\Web\Controllers\Outbound\OutboundNotificationController;
+use Infrastructure\Web\Controllers\Outbound\OutboundSmsController;
+use Infrastructure\Web\Controllers\Outbound\OutboundWebhookController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('outbound')->group(function () {
