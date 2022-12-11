@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace Application\Actions\Inbound;
 
-use Domain\Actions\Inbound\InboundWebhookActionInterface;
-use Shared\Application\Actionable;
+use Application\Abstracts\InboundNotificationData;
+use Application\Contracts\Inbound\InboundWebhookOutboundActionInterface;
+use Spatie\QueueableAction\QueueableAction;
 
-class InboundWebhookAction extends Actionable implements InboundWebhookActionInterface
+class InboundWebhookAction implements InboundWebhookOutboundActionInterface
 {
-    public function execute()
+    use QueueableAction;
+
+    public function execute(InboundNotificationData $data)
     {
         // TODO: Implement execute() method.
     }

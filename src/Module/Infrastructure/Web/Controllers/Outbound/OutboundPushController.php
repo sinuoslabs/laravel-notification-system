@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Infrastructure\Web\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\FcmRequest;
-use Domain\Actions\Outbound\OutboundPushActionInterface;
+use Application\Contracts\Outbound\OutboundPushOutboundActionInterface;
 use Domain\Enums\NotificationChannel;
 
 class OutboundPushController
 {
-    private OutboundPushActionInterface $action;
+    private OutboundPushOutboundActionInterface $action;
 
-    public function __construct(OutboundPushActionInterface $action)
+    public function __construct(OutboundPushOutboundActionInterface $action)
     {
         $this->action = $action;
     }

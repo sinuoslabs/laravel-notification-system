@@ -7,7 +7,6 @@ namespace Domain\Entities;
 use Domain\Enums\NotificationChannel;
 use Domain\Enums\NotificationStatus;
 use Domain\Enums\NotificationType;
-use Domain\ValueObjects\Message;
 use Shared\Domain\Entity;
 
 class Notification extends Entity
@@ -22,6 +21,8 @@ class Notification extends Entity
 
     private NotificationChannel $notificationChannel;
 
+    private \DateTimeInterface $processingAt;
+
     /**
      * Notification controller
      */
@@ -31,7 +32,7 @@ class Notification extends Entity
     }
 
     /**
-     * @param ...$data
+     * @param array $data
      * @return Notification
      */
     public static function create(array $data): Notification
@@ -40,8 +41,28 @@ class Notification extends Entity
             ->setNotificationChannel(NotificationChannel::from($data['notificationChannel']))
             ->setNotificationType(NotificationType::from($data['notificationType']))
             ->setNotificationStatus(NotificationStatus::from($data['notificationStatus']))
+            ->setProcessingAt($data['processingAt'])
             ->setUserId($data['userId'])
             ->setPayload($data['payload']);
+    }
+
+    /**
+     * @return \DateTimeInterface
+     */
+    public function getProcessingAt(): \DateTimeInterface
+    {
+        return $this->processingAt;
+    }
+
+    /**
+     * @param \DateTimeInterface $processingAt
+     * @return Notification
+     */
+    public function setProcessingAt(\DateTimeInterface $processingAt): Notification
+    {
+        $this->processingAt = $processingAt;
+
+        return $this;
     }
 
     /**

@@ -25,7 +25,8 @@ class NotificationModel extends Model
         'payload',
         'notification_channel',
         'notification_status',
-        'notification_type'
+        'notification_type',
+        'processing_at'
     ];
 
     protected $casts = [

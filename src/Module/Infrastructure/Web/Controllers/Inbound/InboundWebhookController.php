@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace Infrastructure\Web\Controllers\Inbound;
 
 use App\Http\Requests\Outbound\FcmRequest;
-use Domain\Contracts\ActionInterface;
+use Application\Contracts\Outbound\OutboundActionInterface;
 
 class InboundWebhookController
 {
-    private ActionInterface $action;
+    private OutboundActionInterface $action;
 
-    public function __construct(ActionInterface $action)
+    public function __construct(OutboundActionInterface $action)
     {
         $this->action = $action;
     }

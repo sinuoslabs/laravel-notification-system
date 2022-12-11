@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Application\Actions\Outbound;
 
-use Domain\Actions\Outbound\OutboundEmailActionInterface;
+use Application\Abstracts\OutboundNotificationData;
+use Application\Contracts\Outbound\OutboundEmailOutboundActionInterface;
 use Spatie\QueueableAction\QueueableAction;
 
-class OutboundEmailAction implements OutboundEmailActionInterface
+class OutboundEmailAction implements OutboundEmailOutboundActionInterface
 {
     use QueueableAction;
 
@@ -16,7 +17,7 @@ class OutboundEmailAction implements OutboundEmailActionInterface
         //
     }
 
-    public function execute()
+    public function execute(OutboundNotificationData $data)
     {
         // TODO: Implement execute() method.
     }

@@ -5,25 +5,26 @@ declare(strict_types=1);
 namespace Infrastructure\Web\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\WebhookRequest;
-use Application\DTO\WebHookDto;
-use Domain\Actions\Outbound\OutboundWebhookActionInterface;
+use Application\Contracts\Outbound\OutboundWebhookOutboundActionInterface;
+use Application\Factories\OutboundNotificationDataFactory;
 use Domain\Enums\NotificationChannel;
 
 class OutboundWebhookController
 {
-    private OutboundWebhookActionInterface $webhookAction;
+    private OutboundWebhookOutboundActionInterface $webhookAction;
 
-    public function __construct(OutboundWebhookActionInterface $webhookAction)
+    public function __construct(OutboundWebhookOutboundActionInterface $webhookAction)
     {
         $this->webhookAction = $webhookAction;
     }
 
     public function __invoke(WebhookRequest $request)
     {
-        $body = WebHookDto::fromRequest($request);
+        $channel = NotificationChannel::WEBHOOK->value;
+        $body = OutboundNotificationDataFactory::fromRequest($request, $channel, now());
 
         $this->webhookAction
-            ->onQueue(NotificationChannel::WEBHOOK->value)
+            ->onQueue($channel)
             ->execute($body);
 
         return response()

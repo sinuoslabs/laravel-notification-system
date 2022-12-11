@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace Infrastructure\Web\Controllers\Outbound;
 
-use Domain\Actions\Outbound\OutboundEmailActionInterface;
-use Domain\Actions\Outbound\OutboundPushActionInterface;
-use Domain\Actions\Outbound\OutboundSmsActionInterface;
-use Domain\Actions\Outbound\OutboundWebhookActionInterface;
+use Application\Contracts\Outbound\OutboundEmailOutboundActionInterface;
+use Application\Contracts\Outbound\OutboundPushOutboundActionInterface;
+use Application\Contracts\Outbound\OutboundSmsOutboundActionInterface;
+use Application\Contracts\Outbound\OutboundWebhookOutboundActionInterface;
 use Illuminate\Http\Request;
 
 class OutboundNotificationController
 {
-    private OutboundEmailActionInterface $emailAction;
-    private OutboundSmsActionInterface $smsAction;
-    private OutboundPushActionInterface $pushAction;
-    private OutboundWebhookActionInterface $webhookAction;
+    private OutboundEmailOutboundActionInterface $emailAction;
+    private OutboundSmsOutboundActionInterface $smsAction;
+    private OutboundPushOutboundActionInterface $pushAction;
+    private OutboundWebhookOutboundActionInterface $webhookAction;
 
     public function __construct(
-        OutboundEmailActionInterface $emailAction,
-        OutboundSmsActionInterface $smsAction,
-        OutboundPushActionInterface $pushAction,
-        OutboundWebhookActionInterface $webhookAction
+        OutboundEmailOutboundActionInterface   $emailAction,
+        OutboundSmsOutboundActionInterface     $smsAction,
+        OutboundPushOutboundActionInterface    $pushAction,
+        OutboundWebhookOutboundActionInterface $webhookAction
     ) {
         $this->emailAction = $emailAction;
         $this->smsAction = $smsAction;

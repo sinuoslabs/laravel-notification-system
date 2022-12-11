@@ -25,6 +25,7 @@ class EloquentNotificationRepository implements NotificationRepositoryInterface
         NotificationModel::create([
             'payload' => $notification->getPayload(),
             'user_id' => $notification->getUserId(),
+            'processing_at' => $notification->getProcessingAt(),
             'notification_channel' => $notification->getNotificationChannel()->value,
             'notification_status' => $notification->getNotificationStatus()->value,
             'notification_type' => $notification->getNotificationType()->value,

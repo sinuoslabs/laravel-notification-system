@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Application\Actions\Outbound;
 
-use Domain\Actions\Outbound\OutboundWebhookActionInterface;
-use Domain\Contracts\RequestTransformerInterface;
+use Application\Abstracts\OutboundNotificationData;
+use Application\Contracts\Outbound\OutboundWebhookOutboundActionInterface;
 use Domain\Entities\Notification;
 use Domain\Repositories\NotificationRepositoryInterface;
 use Spatie\QueueableAction\QueueableAction;
 
-class OutboundWebhookAction implements OutboundWebhookActionInterface
+class OutboundWebhookAction implements OutboundWebhookOutboundActionInterface
 {
     use QueueableAction;
 
@@ -18,7 +18,7 @@ class OutboundWebhookAction implements OutboundWebhookActionInterface
     {
     }
 
-    public function execute(RequestTransformerInterface $data)
+    public function execute(OutboundNotificationData $data)
     {
         $notification = Notification::create($data->toArray());
 
