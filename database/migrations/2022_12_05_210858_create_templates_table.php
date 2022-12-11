@@ -13,7 +13,7 @@ return new class () extends Migration {
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('template_id')->unique();
-            $table->jsonb('content')->default([]);
+            $table->jsonb('content')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

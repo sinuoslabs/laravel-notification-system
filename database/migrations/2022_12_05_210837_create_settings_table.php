@@ -11,7 +11,7 @@ return new class () extends Migration {
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignUuid('user_id')->constrained()->cascadeOnDelete();
             $table->enum('channel', [
                 'EMAIL',
                 'SMS',
