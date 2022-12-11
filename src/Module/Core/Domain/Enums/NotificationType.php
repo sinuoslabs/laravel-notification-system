@@ -8,4 +8,5 @@ enum NotificationType: string
 {
     case TRANSACTIONAL = 'TRANSACTIONAL';
     case ALERT = 'ALERT';
+    case PROMOTIONAL = 'PROMOTIONAL';
 }
