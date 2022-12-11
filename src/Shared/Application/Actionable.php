@@ -2,10 +2,9 @@
 
 namespace Shared\Application;
 
-use Domain\Contracts\ActionInterface;
 use Spatie\QueueableAction\QueueableAction;
 
-abstract class Actionable implements ActionInterface
+abstract class Actionable
 {
     use QueueableAction;
 
