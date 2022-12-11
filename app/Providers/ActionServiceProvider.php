@@ -10,8 +10,11 @@ use Application\Actions\Outbound\OutboundEmailAction;
 use Application\Actions\Outbound\OutboundPushAction;
 use Application\Actions\Outbound\OutboundSmsAction;
 use Application\Actions\Outbound\OutboundWebhookAction;
+use Domain\Abstracts\NotificationDomain;
 use Application\Actions\Settings\CreateSettingsAction;
 use Illuminate\Support\ServiceProvider;
+use Infrastructure\providers\HttpNotificationProvider;
+use Infrastructure\Web\Controllers\Inbound\InboundWebhookController;
 use Infrastructure\Web\Controllers\Outbound\OutboundEmailController;
 use Infrastructure\Web\Controllers\Outbound\OutboundPushController;
 use Infrastructure\Web\Controllers\Outbound\OutboundSmsController;
@@ -22,12 +25,12 @@ class ActionServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        // Register inbound method's
-        $this->app->when(InboundWebhookAction::class)
+        // Register inbound controller's
+        $this->app->when(InboundWebhookController::class)
             ->needs(Actionable::class)
             ->give(InboundWebhookAction::class);
 
-        // Register outbound method's
+        // Register outbound controller's
         $this->app->when(OutboundEmailController::class)
             ->needs(Actionable::class)
             ->give(OutboundEmailAction::class);
@@ -47,6 +50,11 @@ class ActionServiceProvider extends ServiceProvider
         $this->app->when(CreateSettingsController::class)
             ->needs(Actionable::class)
             ->give(CreateSettingsAction::class);
+
+        // Register inbound controller's
+        $this->app->when(OutboundWebhookAction::class)
+            ->needs(NotificationDomain::class)
+            ->give(HttpNotificationProvider::class);
     }
 
     public function boot(): void

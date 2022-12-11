@@ -5,7 +5,7 @@ namespace Application\Factories;
 use App\Http\Requests\Outbound\WebhookRequest;
 use Application\Abstracts\ActionableData;
 
-class ActionableDataFactory extends ActionableData
+class NotificationDataFactory extends ActionableData
 {
     public function __construct(
         public readonly string $userId,

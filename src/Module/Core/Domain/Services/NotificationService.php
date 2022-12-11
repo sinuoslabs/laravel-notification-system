@@ -4,31 +4,32 @@ declare(strict_types=1);
 
 namespace Domain\Services;
 
-use Domain\Contracts\NotificationProviderInterface;
+use Domain\Abstracts\MessageDomain;
+use Domain\Abstracts\NotificationDomain;
 
 class NotificationService
 {
-    public function __construct(public NotificationProviderInterface $notification)
+    public function __construct(public NotificationDomain $notification)
     {
     }
 
-    public function sendEmailNotification()
+    public function sendEmailNotification(MessageDomain $message)
     {
-        //
+        return $this->notification->send($message);
     }
 
-    public function sendSmsNotification()
+    public function sendSmsNotification(MessageDomain $message)
     {
-        //
+        return $this->notification->send($message);
     }
 
-    public function sendPushNotification()
+    public function sendPushNotification(MessageDomain $message)
     {
-        //
+        return $this->notification->send($message);
     }
 
-    public function sendInAppNotification()
+    public function sendInAppNotification(MessageDomain $message)
     {
-        //
+        return $this->notification->send($message);
     }
 }

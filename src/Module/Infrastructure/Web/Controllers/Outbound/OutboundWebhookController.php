@@ -6,7 +6,7 @@ namespace Infrastructure\Web\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\WebhookRequest;
 use Application\Abstracts\Actionable;
-use Application\Factories\ActionableDataFactory;
+use Application\Factories\NotificationDataFactory;
 use Domain\Enums\NotificationChannel;
 use Illuminate\Http\JsonResponse;
 
@@ -20,7 +20,7 @@ class OutboundWebhookController
     public function __invoke(WebhookRequest $request): JsonResponse
     {
         $channel = NotificationChannel::WEBHOOK->value;
-        $body = ActionableDataFactory::fromRequest($request, $channel, now());
+        $body = NotificationDataFactory::fromRequest($request, $channel, now());
 
         $this->actionable
             ->onQueue($channel)

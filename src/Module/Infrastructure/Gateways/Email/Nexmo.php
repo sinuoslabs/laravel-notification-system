@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Infrastructure\Gateways\Email;
 
-use Domain\Contracts\NotificationProviderInterface;
+use Domain\Abstracts\NotificationDomain;
 use Domain\ValueObjects\Message;
 
-class SendgridProvider implements NotificationProviderInterface
+class Nexmo implements NotificationDomain
 {
     public function send(Message $message)
     {

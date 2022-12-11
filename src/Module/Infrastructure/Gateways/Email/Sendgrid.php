@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Gateways\Sms;
+namespace Infrastructure\Gateways\Email;
 
-use Domain\Contracts\NotificationProviderInterface;
+use Domain\Abstracts\NotificationDomain;
 use Domain\ValueObjects\Message;
 
-class TwilioProvider implements NotificationProviderInterface
+class Sendgrid implements NotificationDomain
 {
     public function send(Message $message)
     {
