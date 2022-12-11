@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Database\Factories;
 
-use Infrastructure\Persistence\Eloquent\Models\Settings;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Infrastructure\Repository\Persistence\Eloquent\Models\Settings;
 
 /**
  * @extends Factory<Settings>

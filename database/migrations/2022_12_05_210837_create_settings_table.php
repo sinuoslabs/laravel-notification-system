@@ -17,7 +17,7 @@ return new class() extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignIdFor(\Infrastructure\Persistence\Eloquent\Models\User::class);
+            $table->foreignIdFor(\Infrastructure\Repository\Persistence\Eloquent\Models\User::class);
             $table->enum('channel', [
                 'EMAIL',
                 'SMS',

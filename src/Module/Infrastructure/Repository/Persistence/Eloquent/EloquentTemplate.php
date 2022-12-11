@@ -1,6 +1,6 @@
 <?php
 
-namespace Infrastructure\Persistence\Eloquent;
+namespace Infrastructure\Repository\Persistence\Eloquent;
 
 use Domain\Entities\Template;
 use Domain\Repositories\TemplateRepositoryInterface;

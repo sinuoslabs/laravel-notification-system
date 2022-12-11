@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Database\Factories;
 
-use Infrastructure\Persistence\Eloquent\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Infrastructure\Repository\Persistence\Eloquent\Models\User;
 
 /**
  * @extends Factory<User>

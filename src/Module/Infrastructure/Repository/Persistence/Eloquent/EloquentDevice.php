@@ -1,6 +1,6 @@
 <?php
 
-namespace Infrastructure\Persistence\Eloquent;
+namespace Infrastructure\Repository\Persistence\Eloquent;
 
 use Domain\Entities\Device;
 use Domain\Repositories\DeviceRepositoryInterface;
