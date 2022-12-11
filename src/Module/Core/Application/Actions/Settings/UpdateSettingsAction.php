@@ -2,7 +2,13 @@
 
 namespace Application\Actions\Settings;
 
-class UpdateSettingsAction
-{
+use Application\Abstracts\Actionable;
+use Application\Abstracts\ActionableData;
 
+class UpdateSettingsAction extends Actionable
+{
+    public function prepare(ActionableData $data)
+    {
+        // TODO: Implement prepare() method.
+    }
 }

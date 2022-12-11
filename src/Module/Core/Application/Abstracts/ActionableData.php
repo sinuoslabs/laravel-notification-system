@@ -2,7 +2,7 @@
 
 namespace Application\Abstracts;
 
-abstract class OutboundNotificationData
+abstract class ActionableData
 {
     abstract public function toArray();
 }

@@ -4,29 +4,27 @@ declare(strict_types=1);
 
 namespace Application\Actions\Outbound;
 
-use Application\Abstracts\OutboundNotificationData;
-use Application\Contracts\Outbound\OutboundWebhookOutboundActionInterface;
+use Application\Abstracts\Actionable;
+use Application\Abstracts\ActionableData;
+use Domain\Contracts\UnitOfWorkInterface;
 use Domain\Entities\Notification;
 use Domain\Repositories\NotificationRepositoryInterface;
-use Spatie\QueueableAction\QueueableAction;
 
-class OutboundWebhookAction implements OutboundWebhookOutboundActionInterface
+class OutboundWebhookAction extends Actionable
 {
-    use QueueableAction;
+    private NotificationRepositoryInterface $notificationRepository;
 
-    public function __construct(public readonly NotificationRepositoryInterface $notificationRepository)
+    public function __construct(UnitOfWorkInterface $unitOfWork, NotificationRepositoryInterface $notificationRepository)
     {
+        parent::__construct($unitOfWork);
+
+        $this->notificationRepository = $notificationRepository;
     }
 
-    public function execute(OutboundNotificationData $data)
+    public function prepare(ActionableData $data)
     {
         $notification = Notification::create($data->toArray());
 
         $this->notificationRepository->saveNotification($notification);
-    }
-
-    public function backoff(): array
-    {
-        return [2, 5, 10, 15, 30];
     }
 }

@@ -4,16 +4,19 @@ declare(strict_types=1);
 
 namespace Application\Actions\Inbound;
 
-use Application\Abstracts\InboundNotificationData;
-use Application\Contracts\Inbound\InboundWebhookOutboundActionInterface;
-use Spatie\QueueableAction\QueueableAction;
+use Application\Abstracts\Actionable;
+use Application\Abstracts\ActionableData;
+use Domain\Contracts\UnitOfWorkInterface;
 
-class InboundWebhookAction implements InboundWebhookOutboundActionInterface
+class InboundWebhookAction extends Actionable
 {
-    use QueueableAction;
-
-    public function execute(InboundNotificationData $data)
+    public function __construct(UnitOfWorkInterface $unitOfWork)
     {
-        // TODO: Implement execute() method.
+        parent::__construct($unitOfWork);
+    }
+
+    public function prepare(ActionableData $data): mixed
+    {
+        return;
     }
 }

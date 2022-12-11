@@ -4,26 +4,19 @@ declare(strict_types=1);
 
 namespace Application\Actions\Outbound;
 
-use Application\Abstracts\OutboundNotificationData;
-use Application\Contracts\Outbound\OutboundEmailOutboundActionInterface;
-use Spatie\QueueableAction\QueueableAction;
+use Application\Abstracts\Actionable;
+use Application\Abstracts\ActionableData;
+use Domain\Contracts\UnitOfWorkInterface;
 
-class OutboundEmailAction implements OutboundEmailOutboundActionInterface
+class OutboundEmailAction extends Actionable
 {
-    use QueueableAction;
-
-    public function __construct()
+    public function __construct(UnitOfWorkInterface $unitOfWork)
     {
-        //
+        parent::__construct($unitOfWork);
     }
 
-    public function execute(OutboundNotificationData $data)
+    public function prepare(ActionableData $data): mixed
     {
-        // TODO: Implement execute() method.
-    }
-
-    public function backoff(): array
-    {
-        return [2, 5, 10, 15, 30];
+        return;
     }
 }

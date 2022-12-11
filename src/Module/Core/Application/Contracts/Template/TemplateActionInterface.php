@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Contracts\Device;
+namespace Application\Contracts\Template;
 
 interface TemplateActionInterface
 {
