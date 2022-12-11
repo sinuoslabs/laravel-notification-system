@@ -6,7 +6,6 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Infrastructure\Repository\Persistence\Eloquent\Models\UserModel;
 
 class UserFactory extends Factory
 {

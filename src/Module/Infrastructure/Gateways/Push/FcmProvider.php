@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Providers\Push;
+namespace Infrastructure\Gateways\Push;
 
 use Domain\Contracts\NotificationProviderInterface;
 use Domain\ValueObjects\Message;

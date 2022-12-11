@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Repository\Persistence\Eloquent;
+namespace Infrastructure\Persistences\Eloquent\Repositories;
 
 use Domain\Entities\Notification;
 use Domain\Repositories\NotificationRepositoryInterface;
 
-class EloquentNotification implements NotificationRepositoryInterface
+class EloquentNotificationRepository implements NotificationRepositoryInterface
 {
     public function allNotifications()
     {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Repository\Persistence\Eloquent;
+namespace Infrastructure\Persistences\Eloquent\Repositories;
 
 use Domain\Entities\User;
 use Domain\Repositories\UserRepositoryInterface;
-use Infrastructure\Repository\Persistence\Eloquent\Models\UserModel;
+use Infrastructure\Persistence\Eloquent\Models\UserModel;
 
-class EloquentUser implements UserRepositoryInterface
+class EloquentUserRepository implements UserRepositoryInterface
 {
     public function allUsers()
     {

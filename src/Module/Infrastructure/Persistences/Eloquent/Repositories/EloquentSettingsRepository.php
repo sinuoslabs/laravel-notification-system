@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Repository\Persistence\Eloquent;
+namespace Infrastructure\Persistences\Eloquent\Repositories;
 
 use Domain\Entities\Settings;
 use Domain\Repositories\SettingRepositoryInterface;
 
-class EloquentSettings implements SettingRepositoryInterface
+class EloquentSettingsRepository implements SettingRepositoryInterface
 {
     public function allSettings()
     {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Providers\Sms;
+namespace Infrastructure\Gateways\Sms;
 
 use Domain\Contracts\NotificationProviderInterface;
 use Domain\ValueObjects\Message;

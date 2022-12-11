@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Repository\Persistence\Eloquent;
+namespace Infrastructure\Persistences\Eloquent\Repositories;
 
 use Domain\Entities\Device;
 use Domain\Repositories\DeviceRepositoryInterface;
 
-class EloquentDevice implements DeviceRepositoryInterface
+class EloquentDeviceRepository implements DeviceRepositoryInterface
 {
     public function allDevices()
     {

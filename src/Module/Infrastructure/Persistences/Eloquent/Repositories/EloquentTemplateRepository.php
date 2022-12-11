@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Repository\Persistence\Eloquent;
+namespace Infrastructure\Persistences\Eloquent\Repositories;
 
 use Domain\Entities\Template;
 use Domain\Repositories\TemplateRepositoryInterface;
 
-class EloquentTemplate implements TemplateRepositoryInterface
+class EloquentTemplateRepository implements TemplateRepositoryInterface
 {
     public function allTemplates()
     {

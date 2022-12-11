@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Providers\Email;
+namespace Infrastructure\Gateways\Email;
 
 use Domain\Contracts\NotificationProviderInterface;
 use Domain\ValueObjects\Message;

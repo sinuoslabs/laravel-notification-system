@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Repository\Persistence\Eloquent\Models;
+namespace Infrastructure\Persistences\Eloquent\Models;
 
 // use Illuminate\Concerns\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
