@@ -36,11 +36,13 @@ class OutboundWebhookAction extends Actionable
 
         $this->notificationRepository->saveNotification($notification);
 
+        $payload = (object) $notification->getPayload();
+
         $response = $this->notification->send(
             (new WebhookMessage())
-                ->setUrl($notification->getPayload()['url'])
-                ->setHeader($notification->getPayload()['header'] ?? null)
-                ->setBody($notification->getPayload()['body'])
+                ->setUrl($payload->url)
+                ->setHeader($payload->header ?? null)
+                ->setBody($payload->body)
         );
     }
 }
