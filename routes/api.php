@@ -24,4 +24,8 @@ Route::prefix('v1')->group(function () {
     require __DIR__.'/v1/inbound.php';
 
     require __DIR__.'/v1/outbound.php';
+
+    require __DIR__.'/v1/device.php';
+
+    require __DIR__.'/v1/settings.php';
 });
