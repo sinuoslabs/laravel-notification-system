@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Outbound;
+namespace Infrastructure\Web\Controllers\Outbound;
 
 use Domain\Actions\Outbound\OutboundEmailActionInterface;
 use Domain\Actions\Outbound\OutboundPushActionInterface;
