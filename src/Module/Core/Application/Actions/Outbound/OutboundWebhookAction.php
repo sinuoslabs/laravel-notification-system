@@ -4,16 +4,26 @@ declare(strict_types=1);
 
 namespace Application\Actions\Outbound;
 
+use Application\DTO\WebHookDto;
 use Domain\Actions\Outbound\OutboundWebhookActionInterface;
+use Domain\Contracts\RequestTransformerInterface;
+use Domain\Entities\Notification;
+use Domain\Repositories\NotificationRepositoryInterface;
 use Spatie\QueueableAction\QueueableAction;
 
 class OutboundWebhookAction implements OutboundWebhookActionInterface
 {
     use QueueableAction;
 
-    public function execute()
+    public function __construct(public readonly NotificationRepositoryInterface $notificationRepository)
     {
-        // TODO: Implement execute() method.
+    }
+
+    public function execute(RequestTransformerInterface $data)
+    {
+        $notification = Notification::create($data->toArray());
+
+        $this->notificationRepository->saveNotification($notification);
     }
 
     public function backoff(): array

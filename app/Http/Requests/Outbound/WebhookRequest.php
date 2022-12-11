@@ -20,10 +20,10 @@ class WebhookRequest extends FormRequest
         return [
             'notificationType' => ['required', Rule::enum(NotificationType::class)],
             'userId' => ['required', 'uuid'],
-            'to' => ['required', 'array'],
-            'to.url' => ['required', 'url'],
-            'to.header' => ['array'],
-            'to.body' => ['required', 'array'],
+            'payload' => ['required', 'array'],
+            'payload.url' => ['required', 'url'],
+            'payload.header' => ['array'],
+            'payload.body' => ['required', 'array'],
         ];
     }
 }

@@ -4,53 +4,139 @@ declare(strict_types=1);
 
 namespace Domain\Entities;
 
+use Domain\Enums\NotificationChannel;
+use Domain\Enums\NotificationStatus;
+use Domain\Enums\NotificationType;
 use Domain\ValueObjects\Message;
 use Shared\Domain\Entity;
 
 class Notification extends Entity
 {
-    public User $from;
+    private string $userId;
 
-    public User $to;
+    private array $payload;
 
-    public Message $message;
+    private NotificationStatus $notificationStatus;
 
-    public function __construct(User $from, User $to, Message $message)
+    private NotificationType $notificationType;
+
+    private NotificationChannel $notificationChannel;
+
+    /**
+     * Notification controller
+     */
+    public function __construct()
     {
-        $this->from = $from;
-        $this->to = $to;
-        $this->message = $message;
-
         parent::__construct();
     }
 
-    public function getFrom(): User
+    /**
+     * @param ...$data
+     * @return Notification
+     */
+    public static function create(...$data): Notification
     {
-        return $this->from;
+        return (new self())
+            ->setUserId($data['userId'])
+            ->setNotificationChannel(NotificationChannel::from($data['notificationChannel']))
+            ->setNotificationType(NotificationType::from($data['notificationType']))
+            ->setNotificationStatus(NotificationStatus::from($data['notificationStatus']))
+            ->setPayload($data['payload']);
     }
 
-    public function setFrom(User $from): void
+    /**
+     * @return string
+     */
+    public function getUserId(): string
     {
-        $this->from = $from;
+        return $this->userId;
     }
 
-    public function getTo(): User
+    /**
+     * @param string $userId
+     * @return Notification
+     */
+    public function setUserId(string $userId): Notification
     {
-        return $this->to;
+        $this->userId = $userId;
+
+        return $this;
     }
 
-    public function setTo(User $to): void
+
+    /**
+     * @return array
+     */
+    public function getPayload(): array
     {
-        $this->to = $to;
+        return $this->payload;
     }
 
-    public function getMessage(): Message
+    /**
+     * @param array $payload
+     * @return Notification
+     */
+    public function setPayload(array $payload): Notification
     {
-        return $this->message;
+        $this->payload = $payload;
+
+        return $this;
     }
 
-    public function setMessage(Message $message): void
+    /**
+     * @return NotificationStatus
+     */
+    public function getNotificationStatus(): NotificationStatus
     {
-        $this->message = $message;
+        return $this->notificationStatus;
+    }
+
+    /**
+     * @param NotificationStatus $notificationStatus
+     * @return Notification
+     */
+    public function setNotificationStatus(NotificationStatus $notificationStatus): Notification
+    {
+        $this->notificationStatus = $notificationStatus;
+
+        return $this;
+    }
+
+    /**
+     * @return NotificationType
+     */
+    public function getNotificationType(): NotificationType
+    {
+        return $this->notificationType;
+    }
+
+    /**
+     * @param NotificationType $notificationType
+     * @return Notification
+     */
+    public function setNotificationType(NotificationType $notificationType): Notification
+    {
+        $this->notificationType = $notificationType;
+
+        return $this;
+    }
+
+    /**
+     * @return NotificationChannel
+     */
+    public function getNotificationChannel(): NotificationChannel
+    {
+        return $this->notificationChannel;
+    }
+
+    /**
+     * @param NotificationChannel $notificationChannel
+     * @return Notification
+     */
+    public function setNotificationChannel(NotificationChannel $notificationChannel): Notification
+    {
+        $this->notificationChannel = $notificationChannel;
+
+        return $this;
     }
 }

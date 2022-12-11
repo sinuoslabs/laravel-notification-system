@@ -6,5 +6,5 @@ namespace Domain\Contracts;
 
 interface ActionInterface
 {
-    public function execute();
+    public function execute(RequestTransformerInterface $data);
 }

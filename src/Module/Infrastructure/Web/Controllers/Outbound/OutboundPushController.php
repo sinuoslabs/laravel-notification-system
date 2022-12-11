@@ -6,7 +6,7 @@ namespace Infrastructure\Web\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\FcmRequest;
 use Domain\Actions\Outbound\OutboundPushActionInterface;
-use Domain\Enums\Channel;
+use Domain\Enums\NotificationChannel;
 
 class OutboundPushController
 {
@@ -20,7 +20,7 @@ class OutboundPushController
     public function __invoke(FcmRequest $request): mixed
     {
         $this->action
-            ->onQueue(Channel::PUSH->value)
+            ->onQueue(NotificationChannel::PUSH->value)
             ->execute();
 
         return 'ok';

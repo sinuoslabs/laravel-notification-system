@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace Domain\Entities;
 
-use Domain\Enums\Channel;
+use Domain\Enums\NotificationChannel;
 use Shared\Domain\Entity;
 
 class Settings extends Entity
 {
     public User $user;
 
-    public Channel $channel;
+    public NotificationChannel $channel;
 
     public bool $optIn = false;
 
-    public function __construct(User $user, Channel $channel, bool $optIn)
+    public function __construct(User $user, NotificationChannel $channel, bool $optIn)
     {
         $this->user = $user;
         $this->channel = $channel;
@@ -34,12 +34,12 @@ class Settings extends Entity
         $this->user = $user;
     }
 
-    public function getChannel(): Channel
+    public function getChannel(): NotificationChannel
     {
         return $this->channel;
     }
 
-    public function setChannel(Channel $channel): void
+    public function setChannel(NotificationChannel $channel): void
     {
         $this->channel = $channel;
     }

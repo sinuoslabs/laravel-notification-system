@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Infrastructure\Web\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\WebhookRequest;
+use Application\DTO\WebHookDto;
 use Domain\Actions\Outbound\OutboundWebhookActionInterface;
-use Domain\Enums\Channel;
+use Domain\Enums\NotificationChannel;
 
 class OutboundWebhookController
 {
@@ -19,12 +20,13 @@ class OutboundWebhookController
 
     public function __invoke(WebhookRequest $request)
     {
-        $body = $request->all();
+        $body = WebHookDto::fromRequest($request);
 
         $this->webhookAction
-            ->onQueue(Channel::WEBHOOK->value)
-            ->execute();
+            ->onQueue(NotificationChannel::WEBHOOK->value)
+            ->execute($body);
 
-        return $body;
+        return response()
+            ->json($body->toArray(), 200);
     }
 }
