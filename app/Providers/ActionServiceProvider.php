@@ -10,11 +10,13 @@ use Application\Actions\Outbound\OutboundEmailAction;
 use Application\Actions\Outbound\OutboundPushAction;
 use Application\Actions\Outbound\OutboundSmsAction;
 use Application\Actions\Outbound\OutboundWebhookAction;
+use Application\Actions\Settings\CreateSettingsAction;
 use Illuminate\Support\ServiceProvider;
 use Infrastructure\Web\Controllers\Outbound\OutboundEmailController;
 use Infrastructure\Web\Controllers\Outbound\OutboundPushController;
 use Infrastructure\Web\Controllers\Outbound\OutboundSmsController;
 use Infrastructure\Web\Controllers\Outbound\OutboundWebhookController;
+use Infrastructure\Web\Controllers\Settings\CreateSettingsController;
 
 class ActionServiceProvider extends ServiceProvider
 {
@@ -41,6 +43,10 @@ class ActionServiceProvider extends ServiceProvider
         $this->app->when(OutboundWebhookController::class)
             ->needs(Actionable::class)
             ->give(OutboundWebhookAction::class);
+
+        $this->app->when(CreateSettingsController::class)
+            ->needs(Actionable::class)
+            ->give(CreateSettingsAction::class);
     }
 
     public function boot(): void

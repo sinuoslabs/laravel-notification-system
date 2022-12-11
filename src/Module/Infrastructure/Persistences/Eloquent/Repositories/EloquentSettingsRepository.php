@@ -6,6 +6,7 @@ namespace Infrastructure\Persistences\Eloquent\Repositories;
 
 use Domain\Entities\Settings;
 use Domain\Repositories\SettingRepositoryInterface;
+use Infrastructure\Persistences\Eloquent\Models\SettingsModel;
 
 class EloquentSettingsRepository implements SettingRepositoryInterface
 {
@@ -26,7 +27,12 @@ class EloquentSettingsRepository implements SettingRepositoryInterface
 
     public function saveSettings(Settings $settings)
     {
-        // TODO: Implement saveSettings() method.
+        return SettingsModel::create([
+            'id' => $settings->getId(),
+            'user_id' => $settings->getUserId(),
+            'channel' => $settings->getChannel(),
+            'opt-in' => $settings->isOptIn(),
+        ]);
     }
 
     public function updateSettings(Settings $settings)

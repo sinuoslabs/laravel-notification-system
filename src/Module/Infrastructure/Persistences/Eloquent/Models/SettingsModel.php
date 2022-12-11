@@ -16,7 +16,15 @@ class SettingsModel extends Model
     use SoftDeletes;
     use HasUuids;
 
+    protected $table = 'settings';
+
     public $timestamps = false;
+
+    protected $fillable = [
+        'user_id',
+        'channel',
+        'opt-in'
+    ];
 
     public function user(): BelongsTo
     {

@@ -17,6 +17,4 @@ interface SettingRepositoryInterface
     public function saveSettings(Settings $settings);
 
     public function updateSettings(Settings $settings);
-
-    public function deleteSettings(Settings $settings);
 }

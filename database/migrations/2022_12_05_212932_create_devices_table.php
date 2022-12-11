@@ -11,7 +11,7 @@ return new class () extends Migration {
     {
         Schema::create('devices', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignUuid('user_id')->constrained()->cascadeOnDelete();
+            $table->uuid('user_id')->index();
             $table->string('device_token');
             $table->timestamp('last_logged_at')->useCurrent();
             $table->softDeletes();
