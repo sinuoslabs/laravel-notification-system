@@ -16,12 +16,13 @@ class EloquentUnitOfWork implements UnitOfWorkInterface
             // start transaction
             DB::beginTransaction();
 
-            $callback();
+            // Call closure function
+            $content = $callback();
 
             // commit transaction
             DB::commit();
 
-            return $callback;
+            return $content;
         } catch (\Exception $e) {
             // rollback transaction
             DB::rollBack();
