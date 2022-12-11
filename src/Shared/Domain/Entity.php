@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Shared\Domain;
 
 use DateTimeInterface;
@@ -22,65 +24,41 @@ abstract class Entity
         $this->updatedAt = now();
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     */
     public function setId(string $id): void
     {
         $this->id = $id;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function getCreatedAt(): DateTimeInterface
     {
         return $this->createdAt;
     }
 
-    /**
-     * @param DateTimeInterface $createdAt
-     */
     public function setCreatedAt(DateTimeInterface $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function getUpdatedAt(): DateTimeInterface
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @param DateTimeInterface $updatedAt
-     */
     public function setUpdatedAt(DateTimeInterface $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
 
-    /**
-     * @return DateTimeInterface|null
-     */
     public function getDeletedAt(): ?DateTimeInterface
     {
         return $this->deletedAt;
     }
 
-    /**
-     * @param DateTimeInterface|null $deletedAt
-     */
     public function setDeletedAt(?DateTimeInterface $deletedAt): void
     {
         $this->deletedAt = $deletedAt;

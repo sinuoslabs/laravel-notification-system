@@ -17,12 +17,6 @@ class OutboundPushController
         $this->action = $action;
     }
 
-    /**
-     * Handle the incoming request.
-     *
-     * @param FcmRequest $request
-     * @return mixed
-     */
     public function __invoke(FcmRequest $request): mixed
     {
         $this->action

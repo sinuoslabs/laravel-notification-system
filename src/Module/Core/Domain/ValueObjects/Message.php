@@ -20,17 +20,11 @@ class Message
         $this->body = $body;
     }
 
-    /**
-     * @return string|null
-     */
     public function getSubject(): ?string
     {
         return $this->subject;
     }
 
-    /**
-     * @return string
-     */
     public function getBody(): string
     {
         return $this->body;

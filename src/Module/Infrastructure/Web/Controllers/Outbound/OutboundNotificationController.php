@@ -22,19 +22,13 @@ class OutboundNotificationController
         OutboundSmsActionInterface $smsAction,
         OutboundPushActionInterface $pushAction,
         OutboundWebhookActionInterface $webhookAction
-    )
-    {
+    ) {
         $this->emailAction = $emailAction;
         $this->smsAction = $smsAction;
         $this->pushAction = $pushAction;
         $this->webhookAction = $webhookAction;
     }
 
-    /**
-     * Handle the incoming request.
-     *
-     * @param  Request  $request
-     */
     public function __invoke(Request $request)
     {
         return $this->action->execute();

@@ -17,11 +17,6 @@ class OutboundSmsController
         $this->action = $action;
     }
 
-    /**
-     * Handle the incoming request.
-     *
-     * @param SmsRequest $request
-     */
     public function __invoke(SmsRequest $request)
     {
         $this->action

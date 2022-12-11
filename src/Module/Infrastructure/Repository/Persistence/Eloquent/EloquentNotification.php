@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Infrastructure\Repository\Persistence\Eloquent;
 
 use Domain\Entities\Notification;
@@ -7,7 +9,6 @@ use Domain\Repositories\NotificationRepositoryInterface;
 
 class EloquentNotification implements NotificationRepositoryInterface
 {
-
     public function allNotifications()
     {
         // TODO: Implement allNotifications() method.

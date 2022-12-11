@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Infrastructure\Repository\Persistence\Eloquent;
 
 use Domain\Entities\Device;
@@ -7,7 +9,6 @@ use Domain\Repositories\DeviceRepositoryInterface;
 
 class EloquentDevice implements DeviceRepositoryInterface
 {
-
     public function allDevices()
     {
         // TODO: Implement allDevices() method.

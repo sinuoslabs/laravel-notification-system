@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Infrastructure\Repository\Persistence\Eloquent;
 
 use Domain\Entities\User;
@@ -8,7 +10,6 @@ use Infrastructure\Repository\Persistence\Eloquent\Models\UserModel;
 
 class EloquentUser implements UserRepositoryInterface
 {
-
     public function allUsers()
     {
         return UserModel::all();

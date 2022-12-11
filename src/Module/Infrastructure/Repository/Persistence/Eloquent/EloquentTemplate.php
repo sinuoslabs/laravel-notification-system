@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Infrastructure\Repository\Persistence\Eloquent;
 
 use Domain\Entities\Template;
@@ -7,7 +9,6 @@ use Domain\Repositories\TemplateRepositoryInterface;
 
 class EloquentTemplate implements TemplateRepositoryInterface
 {
-
     public function allTemplates()
     {
         // TODO: Implement allTemplates() method.

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Infrastructure\Repository\Persistence\Eloquent;
 
 use Domain\Entities\Settings;
@@ -7,7 +9,6 @@ use Domain\Repositories\SettingRepositoryInterface;
 
 class EloquentSettings implements SettingRepositoryInterface
 {
-
     public function allSettings()
     {
         // TODO: Implement allSettings() method.

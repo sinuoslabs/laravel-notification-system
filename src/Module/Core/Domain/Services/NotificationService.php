@@ -10,9 +10,6 @@ class NotificationService
 {
     public NotificationProviderInterface $notification;
 
-    /**
-     * @param NotificationProviderInterface $notification
-     */
     public function __construct(NotificationProviderInterface $notification)
     {
         $this->notification = $notification;

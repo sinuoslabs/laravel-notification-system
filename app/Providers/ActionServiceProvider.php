@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
 use Application\Actions\Inbound\InboundWebhookAction;
@@ -16,11 +18,6 @@ use Illuminate\Support\ServiceProvider;
 
 class ActionServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
     public function register(): void
     {
         // Register inbound method's
@@ -33,11 +30,6 @@ class ActionServiceProvider extends ServiceProvider
         $this->app->bind(OutboundWebhookActionInterface::class, OutboundWebhookAction::class);
     }
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
     public function boot(): void
     {
         //

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Shared\Domain;
 
 use Ramsey\Uuid\Uuid;
@@ -18,9 +20,6 @@ abstract class Identifier
         $this->value = $id;
     }
 
-    /**
-     * @return string
-     */
     public function getValue(): string
     {
         return $this->value;

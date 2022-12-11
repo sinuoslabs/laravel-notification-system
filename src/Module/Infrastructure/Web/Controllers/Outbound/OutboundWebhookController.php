@@ -17,11 +17,6 @@ class OutboundWebhookController
         $this->action = $action;
     }
 
-    /**
-     * Handle the incoming request.
-     *
-     * @param FcmRequest $request
-     */
     public function __invoke(FcmRequest $request)
     {
         $this->action

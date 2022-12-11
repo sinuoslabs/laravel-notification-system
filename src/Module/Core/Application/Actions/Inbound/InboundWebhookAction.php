@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Application\Actions\Inbound;
 
 use Domain\Actions\Inbound\InboundWebhookActionInterface;

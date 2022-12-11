@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
 use Domain\Repositories\DeviceRepositoryInterface;
@@ -14,11 +16,6 @@ use Infrastructure\Repositories\UserRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
     public function register(): void
     {
         $this->app->bind(DeviceRepositoryInterface::class, DeviceRepository::class);
@@ -27,11 +24,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
     }
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
     public function boot(): void
     {
         //

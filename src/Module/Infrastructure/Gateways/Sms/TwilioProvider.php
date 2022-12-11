@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Infrastructure\Providers\Sms;
 
 use Domain\Contracts\NotificationProviderInterface;

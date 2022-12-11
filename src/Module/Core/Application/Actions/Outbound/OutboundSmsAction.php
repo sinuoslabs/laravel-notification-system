@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Application\Actions\Outbound;
 
 use Domain\Actions\Outbound\OutboundSmsActionInterface;
@@ -19,11 +21,6 @@ class OutboundSmsAction implements OutboundSmsActionInterface
         // TODO: Implement execute() method.
     }
 
-    /**
-     * Calculate the number of seconds to wait before retrying the job.
-     *
-     * @return array
-     */
     public function backoff(): array
     {
         return [2, 5, 10, 15, 30];

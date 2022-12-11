@@ -17,11 +17,6 @@ class OutboundEmailController
         $this->action = $action;
     }
 
-    /**
-     * Handle the incoming request.
-     *
-     * @param EmailRequest $request
-     */
     public function __invoke(EmailRequest $request)
     {
         $this->action
