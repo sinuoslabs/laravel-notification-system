@@ -13,7 +13,7 @@ return new class () extends Migration {
             $table->uuid('id')->primary();
             $table->foreignUuid('user_id')->constrained()->cascadeOnDelete();
             $table->string('device_token');
-            $table->timestamp('last_logged_at');
+            $table->timestamp('last_logged_at')->useCurrent();
             $table->softDeletes();
 
             $table->index(['user_id', 'device_token']);
