@@ -6,5 +6,5 @@ use Illuminate\Support\Facades\Route;
 use Infrastructure\Web\Controllers\Settings\UpdateSettingsController;
 
 Route::prefix('settings')->group(function () {
-    Route::put('update', UpdateSettingsController::class);
+    Route::put('{id}/update', UpdateSettingsController::class);
 });

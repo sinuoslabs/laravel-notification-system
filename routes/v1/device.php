@@ -7,9 +7,9 @@ use Infrastructure\Web\Controllers\Device\CreateDeviceTokenController;
 use Infrastructure\Web\Controllers\Device\UpdateDeviceTokenController;
 
 Route::prefix('devices')->group(function () {
-    //Route::get('token', OutboundEmailController::class);
+    //Route::get('token/{device}', OutboundEmailController::class);
 
     Route::post('token/create', CreateDeviceTokenController::class);
 
-    Route::put('token/update', UpdateDeviceTokenController::class);
+    Route::put('token/{device}/update', UpdateDeviceTokenController::class);
 });
