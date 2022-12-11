@@ -6,10 +6,10 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Infrastructure\Repository\Persistence\Eloquent\Models\User;
+use Infrastructure\Repository\Persistence\Eloquent\Models\UserModel;
 
 /**
- * @extends Factory<User>
+ * @extends Factory<UserModel>
  */
 class UserFactory extends Factory
 {

@@ -46,7 +46,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | User Providers
+    | UserModel Providers
     |--------------------------------------------------------------------------
     |
     | All authentication drivers have a user provider. This defines how the
@@ -64,7 +64,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => \Infrastructure\Repository\Persistence\Eloquent\Models\User::class,
+            'model' => \Infrastructure\Repository\Persistence\Eloquent\Models\UserModel::class,
         ],
 
         // 'users' => [

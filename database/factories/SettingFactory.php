@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Infrastructure\Repository\Persistence\Eloquent\Models\Settings;
+use Infrastructure\Repository\Persistence\Eloquent\Models\SettingsModel;
 
 /**
- * @extends Factory<Settings>
+ * @extends Factory<SettingsModel>
  */
 class SettingFactory extends Factory
 {
