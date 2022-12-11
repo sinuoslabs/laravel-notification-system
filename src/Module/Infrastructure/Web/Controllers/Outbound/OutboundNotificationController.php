@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class OutboundNotificationController
 {
-    public function __construct(private OutboundEmailOutboundActionInterface   $emailAction, private OutboundSmsOutboundActionInterface     $smsAction, private OutboundPushOutboundActionInterface    $pushAction, private OutboundWebhookOutboundActionInterface $webhookAction)
+    public function __construct(private OutboundEmailOutboundActionInterface $emailAction, private OutboundSmsOutboundActionInterface $smsAction, private OutboundPushOutboundActionInterface $pushAction, private OutboundWebhookOutboundActionInterface $webhookAction)
     {
     }
 
