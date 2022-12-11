@@ -11,11 +11,6 @@ class OutboundWebhookAction implements OutboundWebhookActionInterface
 {
     use QueueableAction;
 
-    public function __construct()
-    {
-        //
-    }
-
     public function execute()
     {
         // TODO: Implement execute() method.

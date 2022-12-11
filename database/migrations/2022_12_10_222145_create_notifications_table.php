@@ -13,15 +13,15 @@ return new class () extends Migration {
             $table->uuid('id')->primary();
             $table->uuid('user_id')->index();
             $table->string('notification_type')->index();
-            $table->string('channel')->index();
+            $table->string('notification_channel')->index();
+            $table->enum('notification_status', ['pending', 'processing', 'failed', 'sent']);
             $table->text('payload');
-            $table->enum('status', ['pending', 'processing', 'failed', 'sent']);
             $table->dateTime('processing_at')->nullable();
+            $table->dateTime('sent_at')->nullable();
             $table->dateTime('read_at')->nullable();
-            $table->dateTime('delivered_at')->nullable();
             $table->timestamps();
 
-            $table->index(['user_id', 'status', 'notification_type', 'delivered_at', 'processing_at']);
+            $table->index(['user_id', 'status', 'notification_type', 'sent_at', 'processing_at', 'read_at']);
         });
     }
 

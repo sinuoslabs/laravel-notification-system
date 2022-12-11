@@ -16,7 +16,7 @@ Route::prefix('outbound')->group(function () {
 
     Route::post('email/send', OutboundEmailController::class);
 
-    Route::post('fcm/send', OutboundPushController::class);
+    Route::post('push/send', OutboundPushController::class);
 
-    Route::post('webhook', OutboundWebhookController::class);
+    Route::post('webhook/send', OutboundWebhookController::class);
 });

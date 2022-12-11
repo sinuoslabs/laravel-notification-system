@@ -2,6 +2,7 @@
 
 namespace Application\DTO;
 
+use App\Http\Requests\Outbound\WebhookRequest;
 use Domain\Enums\NotificationStatus;
 use Domain\Enums\NotificationType;
 
@@ -17,7 +18,7 @@ class WebHookDto
 
     public readonly array $payload;
 
-    public function fromRequest(Request $request)
+    public function fromRequest(WebhookRequest $request)
     {
         //
     }

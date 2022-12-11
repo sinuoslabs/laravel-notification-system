@@ -4,25 +4,27 @@ declare(strict_types=1);
 
 namespace Infrastructure\Web\Controllers\Outbound;
 
-use App\Http\Requests\Outbound\FcmRequest;
+use App\Http\Requests\Outbound\WebhookRequest;
 use Domain\Actions\Outbound\OutboundWebhookActionInterface;
 use Domain\Enums\Channel;
 
 class OutboundWebhookController
 {
-    private OutboundWebhookActionInterface $action;
+    private OutboundWebhookActionInterface $webhookAction;
 
-    public function __construct(OutboundWebhookActionInterface $action)
+    public function __construct(OutboundWebhookActionInterface $webhookAction)
     {
-        $this->action = $action;
+        $this->webhookAction = $webhookAction;
     }
 
-    public function __invoke(FcmRequest $request)
+    public function __invoke(WebhookRequest $request)
     {
-        $this->action
+        $body = $request->all();
+
+        $this->webhookAction
             ->onQueue(Channel::WEBHOOK->value)
             ->execute();
 
-        return 'ok';
+        return $body;
     }
 }
