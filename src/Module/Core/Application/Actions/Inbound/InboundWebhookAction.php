@@ -3,8 +3,9 @@
 namespace Application\Actions\Inbound;
 
 use Domain\Actions\Inbound\InboundWebhookActionInterface;
+use Shared\Application\Actionable;
 
-class InboundWebhookAction implements InboundWebhookActionInterface
+class InboundWebhookAction extends Actionable implements InboundWebhookActionInterface
 {
     public function execute()
     {

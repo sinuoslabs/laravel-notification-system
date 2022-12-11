@@ -6,5 +6,4 @@ use Domain\Contracts\ActionInterface;
 
 interface OutboundPushActionInterface extends ActionInterface
 {
-    //
 }
