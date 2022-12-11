@@ -22,7 +22,6 @@ class EloquentNotificationRepository implements NotificationRepositoryInterface
 
     public function saveNotification(Notification $notification)
     {
-        dd($notification);
         NotificationModel::create([
             'payload' => $notification->getPayload(),
             'user_id' => $notification->getUserId(),

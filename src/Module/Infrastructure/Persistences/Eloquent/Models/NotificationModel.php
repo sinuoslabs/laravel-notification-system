@@ -20,8 +20,17 @@ class NotificationModel extends Model
 
     protected $table = 'notifications';
 
+    protected $fillable = [
+        'user_id',
+        'payload',
+        'notification_channel',
+        'notification_status',
+        'notification_type'
+    ];
+
     protected $casts = [
         'last_logged_at' => 'datetime',
+        'payload' => 'json',
     ];
 
     public function user(): BelongsTo
