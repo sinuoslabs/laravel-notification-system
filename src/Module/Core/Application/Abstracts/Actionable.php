@@ -3,6 +3,7 @@
 namespace Application\Abstracts;
 
 use Domain\Contracts\UnitOfWorkInterface;
+use Illuminate\Support\Facades\Log;
 use Spatie\QueueableAction\QueueableAction;
 
 abstract class Actionable
@@ -39,6 +40,8 @@ abstract class Actionable
      */
     final public function execute(ActionableData $data)
     {
+        Log::info("Action begin to execute", (array) $data);
+
         return $this->unitOfWork->execute(function () use ($data) {
             return $this->prepare($data);
         });
