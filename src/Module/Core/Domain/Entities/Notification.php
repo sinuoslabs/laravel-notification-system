@@ -34,13 +34,13 @@ class Notification extends Entity
      * @param ...$data
      * @return Notification
      */
-    public static function create(...$data): Notification
+    public static function create(array $data): Notification
     {
         return (new self())
-            ->setUserId($data['userId'])
             ->setNotificationChannel(NotificationChannel::from($data['notificationChannel']))
             ->setNotificationType(NotificationType::from($data['notificationType']))
             ->setNotificationStatus(NotificationStatus::from($data['notificationStatus']))
+            ->setUserId($data['userId'])
             ->setPayload($data['payload']);
     }
 

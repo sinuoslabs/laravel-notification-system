@@ -15,18 +15,19 @@ class WebHookDto implements RequestTransformerInterface
         public readonly NotificationStatus  $notificationStatus,
         public readonly NotificationType    $notificationType,
         public readonly NotificationChannel $notificationChannel,
-        public readonly array $payload
+        public readonly array               $payload
     )
-    {}
+    {
+    }
 
     public static function fromRequest(WebhookRequest $request): static
     {
         return new self(
-            userId : $request->get('userId'),
-            notificationStatus : NotificationStatus::PROCESSING,
-            notificationType : NotificationType::from($request->get('notificationType')),
-            notificationChannel : NotificationChannel::WEBHOOK,
-            payload : $request->get('payload'),
+            userId: $request->get('userId'),
+            notificationStatus: NotificationStatus::PROCESSING,
+            notificationType: NotificationType::from($request->get('notificationType')),
+            notificationChannel: NotificationChannel::WEBHOOK,
+            payload: $request->get('payload'),
         );
     }
 

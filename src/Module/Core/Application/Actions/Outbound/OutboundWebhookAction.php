@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Application\Actions\Outbound;
 
-use Application\DTO\WebHookDto;
 use Domain\Actions\Outbound\OutboundWebhookActionInterface;
 use Domain\Contracts\RequestTransformerInterface;
 use Domain\Entities\Notification;
