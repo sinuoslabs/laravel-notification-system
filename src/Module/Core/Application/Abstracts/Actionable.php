@@ -37,7 +37,7 @@ abstract class Actionable
      * @param ActionableData $data
      * @return mixed|void
      */
-    public function execute(ActionableData $data)
+    final public function execute(ActionableData $data)
     {
         return $this->unitOfWork->execute(function () use ($data) {
             return $this->prepare($data);
