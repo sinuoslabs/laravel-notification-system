@@ -14,4 +14,8 @@ class TemplateModel extends Model
     use HasFactory;
     use SoftDeletes;
     use HasUuids;
+
+    protected $casts = [
+        'content' => 'jsonb'
+    ];
 }

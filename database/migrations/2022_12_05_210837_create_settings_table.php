@@ -20,8 +20,6 @@ return new class () extends Migration {
                 'WEBHOOK',
             ])->index();
             $table->boolean('opt-in')->default(true)->index();
-            $table->timestamps();
-            $table->softDeletes();
 
             $table->index(['channel', 'opt-in', 'user_id']);
         });

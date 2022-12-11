@@ -18,6 +18,10 @@ class DeviceModel extends Model
 
     public $timestamps = false;
 
+    protected $casts = [
+        'last_logged_at' => 'datetime',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(UserModel::class);
