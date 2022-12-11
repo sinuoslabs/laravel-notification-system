@@ -6,7 +6,7 @@ use Domain\Entities\Device;
 
 interface DeviceRepositoryInterface
 {
-    public function allDevice();
+    public function allDevices();
 
     public function getDeviceFromId(string $id);
 
