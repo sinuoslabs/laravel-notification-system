@@ -3,8 +3,9 @@
 namespace Infrastructure\Persistence\Eloquent;
 
 use Domain\Entities\Settings;
+use Domain\Repositories\SettingRepositoryInterface;
 
-class EloquentSettings implements \Domain\Repositories\SettingRepositoryInterface
+class EloquentSettings implements SettingRepositoryInterface
 {
 
     public function allSettings()

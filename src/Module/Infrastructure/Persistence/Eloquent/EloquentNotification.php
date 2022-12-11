@@ -3,8 +3,9 @@
 namespace Infrastructure\Persistence\Eloquent;
 
 use Domain\Entities\Notification;
+use Domain\Repositories\NotificationRepositoryInterface;
 
-class EloquentNotification implements \Domain\Repositories\NotificationRepositoryInterface
+class EloquentNotification implements NotificationRepositoryInterface
 {
 
     public function allNotifications()

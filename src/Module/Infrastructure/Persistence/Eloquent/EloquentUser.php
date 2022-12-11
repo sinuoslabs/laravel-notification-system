@@ -3,13 +3,14 @@
 namespace Infrastructure\Persistence\Eloquent;
 
 use Domain\Entities\User;
+use Domain\Repositories\UserRepositoryInterface;
 
-class EloquentUser implements \Domain\Repositories\UserRepositoryInterface
+class EloquentUser implements UserRepositoryInterface
 {
 
     public function allUsers()
     {
-        // TODO: Implement allUsers() method.
+        return Models\User::all();
     }
 
     public function getUserFromId(string $id)

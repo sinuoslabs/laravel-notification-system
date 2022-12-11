@@ -3,8 +3,9 @@
 namespace Infrastructure\Persistence\Eloquent;
 
 use Domain\Entities\Template;
+use Domain\Repositories\TemplateRepositoryInterface;
 
-class EloquentTemplate implements \Domain\Repositories\TemplateRepositoryInterface
+class EloquentTemplate implements TemplateRepositoryInterface
 {
 
     public function allTemplates()

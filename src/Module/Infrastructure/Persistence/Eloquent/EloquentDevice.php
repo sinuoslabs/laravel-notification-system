@@ -3,8 +3,9 @@
 namespace Infrastructure\Persistence\Eloquent;
 
 use Domain\Entities\Device;
+use Domain\Repositories\DeviceRepositoryInterface;
 
-class EloquentDevice implements \Domain\Repositories\DeviceRepositoryInterface
+class EloquentDevice implements DeviceRepositoryInterface
 {
 
     public function allDevices()
