@@ -9,38 +9,81 @@ use Shared\Domain\Entity;
 
 class Settings extends Entity
 {
-    public function __construct(public User $user, public NotificationChannel $channel, public bool $optIn)
+    public string $userId;
+    public NotificationChannel $channel;
+    public bool $optIn = true;
+
+    public function __construct()
     {
         parent::__construct();
     }
 
-    public function getUser(): User
+    public static function create(array $data): Settings
     {
-        return $this->user;
+        $settings = new self();
+
+        $settings
+            ->setUserId($data['userId'])
+            ->setChannel(
+                NotificationChannel::from($data['channel'])
+            )
+            ->setOptIn($data['optIn'] ?? $settings->isOptIn());
+
+        return $settings;
     }
 
-    public function setUser(User $user): void
+    /**
+     * @return string
+     */
+    public function getUserId(): string
     {
-        $this->user = $user;
+        return $this->userId;
     }
 
+    /**
+     * @param string $userId
+     */
+    public function setUserId(string $userId): Settings
+    {
+        $this->userId = $userId;
+
+        return $this;
+    }
+
+    /**
+     * @return NotificationChannel
+     */
     public function getChannel(): NotificationChannel
     {
         return $this->channel;
     }
 
-    public function setChannel(NotificationChannel $channel): void
+    /**
+     * @param NotificationChannel $channel
+     * @return Settings
+     */
+    public function setChannel(NotificationChannel $channel): Settings
     {
         $this->channel = $channel;
+
+        return $this;
     }
 
+    /**
+     * @return bool
+     */
     public function isOptIn(): bool
     {
         return $this->optIn;
     }
 
-    public function setOptIn(bool $optIn): void
+    /**
+     * @param bool $optIn
+     */
+    public function setOptIn(bool $optIn): Settings
     {
         $this->optIn = $optIn;
+
+        return $this;
     }
 }

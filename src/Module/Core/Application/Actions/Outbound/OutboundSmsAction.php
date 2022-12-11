@@ -10,11 +10,6 @@ use Domain\Contracts\UnitOfWorkInterface;
 
 class OutboundSmsAction extends Actionable
 {
-    public function __construct(UnitOfWorkInterface $unitOfWork)
-    {
-        parent::__construct($unitOfWork);
-    }
-
     public function prepare(ActionableData $data): mixed
     {
         return;

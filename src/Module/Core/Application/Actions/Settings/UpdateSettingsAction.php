@@ -9,6 +9,6 @@ class UpdateSettingsAction extends Actionable
 {
     public function prepare(ActionableData $data)
     {
-        // TODO: Implement prepare() method.
+        return;
     }
 }

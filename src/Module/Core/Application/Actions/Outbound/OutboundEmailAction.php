@@ -10,10 +10,6 @@ use Domain\Contracts\UnitOfWorkInterface;
 
 class OutboundEmailAction extends Actionable
 {
-    public function __construct(UnitOfWorkInterface $unitOfWork)
-    {
-        parent::__construct($unitOfWork);
-    }
 
     public function prepare(ActionableData $data): mixed
     {

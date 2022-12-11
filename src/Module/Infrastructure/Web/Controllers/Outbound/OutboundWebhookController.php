@@ -8,6 +8,7 @@ use App\Http\Requests\Outbound\WebhookRequest;
 use Application\Abstracts\Actionable;
 use Application\Factories\ActionableDataFactory;
 use Domain\Enums\NotificationChannel;
+use Illuminate\Http\JsonResponse;
 
 class OutboundWebhookController
 {
@@ -16,7 +17,7 @@ class OutboundWebhookController
         //
     }
 
-    public function __invoke(WebhookRequest $request): \Illuminate\Http\JsonResponse
+    public function __invoke(WebhookRequest $request): JsonResponse
     {
         $channel = NotificationChannel::WEBHOOK->value;
         $body = ActionableDataFactory::fromRequest($request, $channel, now());
