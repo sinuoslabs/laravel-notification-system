@@ -9,11 +9,8 @@ use Application\Contracts\Outbound\OutboundActionInterface;
 
 class InboundWebhookController
 {
-    private OutboundActionInterface $action;
-
-    public function __construct(OutboundActionInterface $action)
+    public function __construct(private OutboundActionInterface $action)
     {
-        $this->action = $action;
     }
 
     public function __invoke(FcmRequest $request)

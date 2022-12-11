@@ -14,7 +14,8 @@ class OutboundNotificationDataFactory extends OutboundNotificationData
         public readonly string $notificationChannel,
         public readonly \DateTimeInterface $processingAt,
         public readonly array  $payload,
-    ) {}
+    ) {
+    }
 
     public static function fromRequest(WebhookRequest $request, string $channel, ?\DateTimeInterface $processingAt): static
     {

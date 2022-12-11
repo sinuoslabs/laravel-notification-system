@@ -24,18 +24,11 @@ class Notification extends Entity
 
     private DateTimeInterface $processingAt;
 
-    /**
-     * Notification controller
-     */
     public function __construct()
     {
         parent::__construct();
     }
 
-    /**
-     * @param array $data
-     * @return Notification
-     */
     public static function create(array $data): Notification
     {
         $notification = new self();
@@ -50,18 +43,11 @@ class Notification extends Entity
         return $notification;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function getProcessingAt(): DateTimeInterface
     {
         return $this->processingAt;
     }
 
-    /**
-     * @param DateTimeInterface $processingAt
-     * @return Notification
-     */
     public function setProcessingAt(DateTimeInterface $processingAt): Notification
     {
         $this->processingAt = $processingAt;
@@ -69,18 +55,11 @@ class Notification extends Entity
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getUserId(): string
     {
         return $this->userId;
     }
 
-    /**
-     * @param string $userId
-     * @return Notification
-     */
     public function setUserId(string $userId): Notification
     {
         $this->userId = $userId;
@@ -89,18 +68,11 @@ class Notification extends Entity
     }
 
 
-    /**
-     * @return array
-     */
     public function getPayload(): array
     {
         return $this->payload;
     }
 
-    /**
-     * @param array $payload
-     * @return Notification
-     */
     public function setPayload(array $payload): Notification
     {
         $this->payload = $payload;
@@ -108,18 +80,11 @@ class Notification extends Entity
         return $this;
     }
 
-    /**
-     * @return NotificationStatus
-     */
     public function getNotificationStatus(): NotificationStatus
     {
         return $this->notificationStatus;
     }
 
-    /**
-     * @param NotificationStatus $notificationStatus
-     * @return Notification
-     */
     public function setNotificationStatus(NotificationStatus $notificationStatus): Notification
     {
         $this->notificationStatus = $notificationStatus;
@@ -127,18 +92,11 @@ class Notification extends Entity
         return $this;
     }
 
-    /**
-     * @return NotificationType
-     */
     public function getNotificationType(): NotificationType
     {
         return $this->notificationType;
     }
 
-    /**
-     * @param NotificationType $notificationType
-     * @return Notification
-     */
     public function setNotificationType(NotificationType $notificationType): Notification
     {
         $this->notificationType = $notificationType;
@@ -146,18 +104,11 @@ class Notification extends Entity
         return $this;
     }
 
-    /**
-     * @return NotificationChannel
-     */
     public function getNotificationChannel(): NotificationChannel
     {
         return $this->notificationChannel;
     }
 
-    /**
-     * @param NotificationChannel $notificationChannel
-     * @return Notification
-     */
     public function setNotificationChannel(NotificationChannel $notificationChannel): Notification
     {
         $this->notificationChannel = $notificationChannel;

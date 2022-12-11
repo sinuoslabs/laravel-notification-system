@@ -9,18 +9,8 @@ use Shared\Domain\Entity;
 
 class Settings extends Entity
 {
-    public User $user;
-
-    public NotificationChannel $channel;
-
-    public bool $optIn = false;
-
-    public function __construct(User $user, NotificationChannel $channel, bool $optIn)
+    public function __construct(public User $user, public NotificationChannel $channel, public bool $optIn)
     {
-        $this->user = $user;
-        $this->channel = $channel;
-        $this->optIn = $optIn;
-
         parent::__construct();
     }
 

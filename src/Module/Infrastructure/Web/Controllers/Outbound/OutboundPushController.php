@@ -10,11 +10,8 @@ use Domain\Enums\NotificationChannel;
 
 class OutboundPushController
 {
-    private OutboundPushOutboundActionInterface $action;
-
-    public function __construct(OutboundPushOutboundActionInterface $action)
+    public function __construct(private OutboundPushOutboundActionInterface $action)
     {
-        $this->action = $action;
     }
 
     public function __invoke(FcmRequest $request): mixed

@@ -8,18 +8,8 @@ use Shared\Domain\Entity;
 
 class Device extends Entity
 {
-    public User $user;
-
-    public string $deviceToken;
-
-    public \DateTimeInterface $lastLoggedAt;
-
-    public function __construct(User $user, string $deviceToken, \DateTimeInterface $lastLoggedAt)
+    public function __construct(public User $user, public string $deviceToken, public \DateTimeInterface $lastLoggedAt)
     {
-        $this->user = $user;
-        $this->deviceToken = $deviceToken;
-        $this->lastLoggedAt = $lastLoggedAt;
-
         parent::__construct();
     }
 

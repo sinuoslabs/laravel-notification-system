@@ -10,18 +10,8 @@ use Shared\Domain\Entity;
 
 class User extends Entity
 {
-    public ?string $name;
-
-    public ?EmailAddress $email;
-
-    public ?PhoneNumber $phone;
-
-    public function __construct(?string $name = null, ?EmailAddress $email = null, ?PhoneNumber $phone = null)
+    public function __construct(public ?string $name = null, public ?\Domain\ValueObjects\EmailAddress $email = null, public ?\Domain\ValueObjects\PhoneNumber $phone = null)
     {
-        $this->name = $name;
-        $this->email = $email;
-        $this->phone = $phone;
-
         parent::__construct();
     }
 

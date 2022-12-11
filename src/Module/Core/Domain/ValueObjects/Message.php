@@ -6,17 +6,13 @@ namespace Domain\ValueObjects;
 
 class Message
 {
-    public ?string $subject;
-
     public string $body;
 
-    public function __construct(string $body, ?string $subject = null)
+    public function __construct(string $body, public ?string $subject = null)
     {
         if ($body === '') {
             throw new \InvalidArgumentException('Body cannot be empty.');
         }
-
-        $this->subject = $subject;
         $this->body = $body;
     }
 

@@ -10,11 +10,8 @@ use Domain\Enums\NotificationChannel;
 
 class OutboundEmailController
 {
-    private OutboundEmailOutboundActionInterface $action;
-
-    public function __construct(OutboundEmailOutboundActionInterface $action)
+    public function __construct(private OutboundEmailOutboundActionInterface $action)
     {
-        $this->action = $action;
     }
 
     public function __invoke(EmailRequest $request)

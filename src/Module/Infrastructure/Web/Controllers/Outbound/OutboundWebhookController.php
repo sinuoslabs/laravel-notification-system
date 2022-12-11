@@ -11,11 +11,8 @@ use Domain\Enums\NotificationChannel;
 
 class OutboundWebhookController
 {
-    private OutboundWebhookOutboundActionInterface $webhookAction;
-
-    public function __construct(OutboundWebhookOutboundActionInterface $webhookAction)
+    public function __construct(private OutboundWebhookOutboundActionInterface $webhookAction)
     {
-        $this->webhookAction = $webhookAction;
     }
 
     public function __invoke(WebhookRequest $request)

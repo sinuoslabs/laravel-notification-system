@@ -10,11 +10,8 @@ use Domain\Enums\NotificationChannel;
 
 class OutboundSmsController
 {
-    private OutboundSmsOutboundActionInterface $action;
-
-    public function __construct(OutboundSmsOutboundActionInterface $action)
+    public function __construct(private OutboundSmsOutboundActionInterface $action)
     {
-        $this->action = $action;
     }
 
     public function __invoke(SmsRequest $request)

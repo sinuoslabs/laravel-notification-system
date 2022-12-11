@@ -12,21 +12,8 @@ use Illuminate\Http\Request;
 
 class OutboundNotificationController
 {
-    private OutboundEmailOutboundActionInterface $emailAction;
-    private OutboundSmsOutboundActionInterface $smsAction;
-    private OutboundPushOutboundActionInterface $pushAction;
-    private OutboundWebhookOutboundActionInterface $webhookAction;
-
-    public function __construct(
-        OutboundEmailOutboundActionInterface   $emailAction,
-        OutboundSmsOutboundActionInterface     $smsAction,
-        OutboundPushOutboundActionInterface    $pushAction,
-        OutboundWebhookOutboundActionInterface $webhookAction
-    ) {
-        $this->emailAction = $emailAction;
-        $this->smsAction = $smsAction;
-        $this->pushAction = $pushAction;
-        $this->webhookAction = $webhookAction;
+    public function __construct(private OutboundEmailOutboundActionInterface   $emailAction, private OutboundSmsOutboundActionInterface     $smsAction, private OutboundPushOutboundActionInterface    $pushAction, private OutboundWebhookOutboundActionInterface $webhookAction)
+    {
     }
 
     public function __invoke(Request $request)

@@ -8,11 +8,8 @@ use Domain\Contracts\NotificationProviderInterface;
 
 class NotificationService
 {
-    public NotificationProviderInterface $notification;
-
-    public function __construct(NotificationProviderInterface $notification)
+    public function __construct(public NotificationProviderInterface $notification)
     {
-        $this->notification = $notification;
     }
 
     public function sendEmailNotification()
