@@ -10,7 +10,9 @@ use Shared\Domain\Entity;
 class Settings extends Entity
 {
     public string $userId;
+
     public NotificationChannel $channel;
+
     public bool $optIn = true;
 
     public function __construct()

@@ -17,7 +17,7 @@ class GetAllSettingsController
     public function __invoke(Request $request): JsonResponse
     {
         return response()->json(
-            data: $this->query->execute(null),
+            data: $this->query->execute(),
             status: 200
         );
     }

@@ -16,7 +16,7 @@ abstract class Queryable
      * @param QueryableInput|null $query
      * @return mixed
      */
-    final public function execute(?QueryableInput $query): mixed
+    final public function execute(?QueryableInput $query = null): mixed
     {
         return $this->handle($query);
     }
