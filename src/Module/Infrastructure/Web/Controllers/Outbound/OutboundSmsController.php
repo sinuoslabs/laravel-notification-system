@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace Infrastructure\Web\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\SmsRequest;
-use Application\Abstracts\Actionable;
-use Domain\Enums\NotificationChannel;
+use Shared\Application\Actionable;
 
 class OutboundSmsController
 {

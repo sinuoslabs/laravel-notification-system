@@ -2,11 +2,10 @@
 
 namespace Application\Factories;
 
-use Application\Abstracts\ApiData;
+use Shared\Application\Contracts\ActionableInput;
 
-class TemplateDataFactory extends ApiData
+class TemplateDataFactory implements ActionableInput
 {
-
     /**
      * @return array
      */

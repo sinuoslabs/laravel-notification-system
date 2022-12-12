@@ -2,12 +2,12 @@
 
 namespace Application\Actions\Settings;
 
-use Application\Abstracts\Actionable;
-use Application\Abstracts\ActionableData;
+use Shared\Application\Actionable;
+use Shared\Application\Contracts\ActionableInput;
 
 class UpdateSettingsAction extends Actionable
 {
-    public function prepare(ActionableData $data)
+    public function prepare(ActionableInput $data)
     {
         return;
     }

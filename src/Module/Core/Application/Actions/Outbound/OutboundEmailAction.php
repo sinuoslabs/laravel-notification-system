@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Application\Actions\Outbound;
 
-use Application\Abstracts\Actionable;
-use Application\Abstracts\ActionableData;
-use Domain\Contracts\UnitOfWorkInterface;
+use Shared\Application\Actionable;
+use Shared\Application\ActionableData;
 
 class OutboundEmailAction extends Actionable
 {

@@ -3,9 +3,9 @@
 namespace Application\Factories;
 
 use App\Http\Requests\Outbound\WebhookRequest;
-use Application\Abstracts\ActionableData;
+use Shared\Application\Contracts\ActionableInput;
 
-class NotificationDataFactory extends ActionableData
+class NotificationDataFactory implements ActionableInput
 {
     public function __construct(
         public readonly string $userId,

@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Application\Actions\Outbound;
 
-use Application\Abstracts\Actionable;
-use Application\Abstracts\ActionableData;
 use Domain\Abstracts\NotificationDomain;
 use Domain\Contracts\UnitOfWorkInterface;
 use Domain\Entities\Notification;
 use Domain\Messages\WebhookMessage;
 use Domain\Repositories\NotificationRepositoryInterface;
+use Shared\Application\Actionable;
+use Shared\Application\Contracts\ActionableInput;
 
 class OutboundWebhookAction extends Actionable
 {
@@ -30,7 +30,7 @@ class OutboundWebhookAction extends Actionable
         parent::__construct($unitOfWork);
     }
 
-    public function prepare(ActionableData $data)
+    public function prepare(ActionableInput $data)
     {
         $notification = Notification::create($data->toArray());
 

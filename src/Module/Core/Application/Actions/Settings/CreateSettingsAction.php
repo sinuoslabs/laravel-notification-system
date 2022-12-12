@@ -2,11 +2,11 @@
 
 namespace Application\Actions\Settings;
 
-use Application\Abstracts\Actionable;
-use Application\Abstracts\ActionableData;
 use Domain\Contracts\UnitOfWorkInterface;
 use Domain\Entities\Settings;
 use Domain\Repositories\SettingRepositoryInterface;
+use Shared\Application\Actionable;
+use Shared\Application\Contracts\ActionableInput;
 
 class CreateSettingsAction extends Actionable
 {
@@ -20,10 +20,10 @@ class CreateSettingsAction extends Actionable
     }
 
     /**
-     * @param ActionableData $data
+     * @param ActionableInput $data
      * @return void
      */
-    public function prepare(ActionableData $data): void
+    public function prepare(ActionableInput $data): void
     {
         $settings = Settings::create($data->toArray());
 

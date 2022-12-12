@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Infrastructure\Web\Controllers\Outbound;
 
 use App\Http\Requests\Outbound\WebhookRequest;
-use Application\Abstracts\Actionable;
 use Application\Factories\NotificationDataFactory;
 use Domain\Enums\NotificationChannel;
 use Illuminate\Http\JsonResponse;
+use Shared\Application\Actionable;
 
 class OutboundWebhookController
 {

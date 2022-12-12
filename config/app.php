@@ -197,7 +197,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\DomainServiceProvider::class,
+        App\Providers\ControllerServiceProvider::class,
         App\Providers\ActionServiceProvider::class,
+        App\Providers\QueryServiceProvider::class,
 
     ],
 

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Application\Actions\Inbound;
 
-use Application\Abstracts\Actionable;
-use Application\Abstracts\ActionableData;
 use Domain\Contracts\UnitOfWorkInterface;
+use Shared\Application\Actionable;
+use Shared\Application\Contracts\ActionableInput;
 
 class InboundWebhookAction extends Actionable
 {
@@ -15,7 +15,7 @@ class InboundWebhookAction extends Actionable
         parent::__construct($unitOfWork);
     }
 
-    public function prepare(ActionableData $data): mixed
+    public function prepare(ActionableInput $data): mixed
     {
         return;
     }

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Infrastructure\Web\Controllers\Outbound;
 
-use Application\Abstracts\Actionable;
 use Illuminate\Http\Request;
+use Shared\Application\Actionable;
 
 class OutboundNotificationController
 {

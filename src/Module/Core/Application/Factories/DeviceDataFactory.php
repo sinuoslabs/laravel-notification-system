@@ -2,11 +2,10 @@
 
 namespace Application\Factories;
 
-use Application\Abstracts\ApiData;
+use Shared\Application\Contracts\ActionableInput;
 
-class DeviceDataFactory extends ApiData
+class DeviceDataFactory implements ActionableInput
 {
-
     /**
      * @return array
      */

@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace Application\Actions\Outbound;
 
-use Application\Abstracts\Actionable;
-use Application\Abstracts\ActionableData;
-use Domain\Contracts\UnitOfWorkInterface;
+use Shared\Application\Actionable;
+use Shared\Application\Contracts\ActionableInput;
 
 class OutboundSmsAction extends Actionable
 {
-    public function prepare(ActionableData $data): mixed
+    public function prepare(ActionableInput $data): mixed
     {
         return;
     }

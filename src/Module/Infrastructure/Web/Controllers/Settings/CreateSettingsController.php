@@ -3,10 +3,9 @@
 namespace Infrastructure\Web\Controllers\Settings;
 
 use App\Http\Requests\Settings\CreateSettingsRequest;
-use Application\Abstracts\Actionable;
-use Application\Factories\NotificationDataFactory;
 use Application\Factories\SettingsDataFactory;
 use Illuminate\Http\JsonResponse;
+use Shared\Application\Actionable;
 
 class CreateSettingsController
 {

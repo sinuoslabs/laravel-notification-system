@@ -3,9 +3,9 @@
 namespace Application\Factories;
 
 use App\Http\Requests\Settings\CreateSettingsRequest;
-use Application\Abstracts\ActionableData;
+use Shared\Application\Contracts\ActionableInput;
 
-class SettingsDataFactory extends ActionableData
+class SettingsDataFactory implements ActionableInput
 {
     public function __construct(
         public readonly string $userId,
