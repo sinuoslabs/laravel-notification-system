@@ -2,9 +2,9 @@
 
 namespace Domain\Messages;
 
-use Domain\Abstracts\MessageDomain;
+use Domain\Ports\MessagePort;
 
-class WebhookMessage extends MessageDomain
+class WebhookMessage implements MessagePort
 {
     private string $url;
 

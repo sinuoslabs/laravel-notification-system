@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Domain\Contracts;
+namespace Domain\Ports;
 
-interface UnitOfWorkInterface
+interface UnitOfWorkPort
 {
     public function execute(\Closure $callback);
 }

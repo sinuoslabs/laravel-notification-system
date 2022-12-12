@@ -2,7 +2,7 @@
 
 namespace Application\Actions\Settings;
 
-use Domain\Contracts\UnitOfWorkInterface;
+use Domain\Ports\UnitOfWorkPort;
 use Domain\Entities\Settings;
 use Domain\Repositories\SettingRepositoryInterface;
 use Shared\Application\Actionable;
@@ -12,7 +12,7 @@ class CreateSettingsAction extends Actionable
 {
     public SettingRepositoryInterface $repository;
 
-    public function __construct(UnitOfWorkInterface $unitOfWork, SettingRepositoryInterface $repository)
+    public function __construct(UnitOfWorkPort $unitOfWork, SettingRepositoryInterface $repository)
     {
         parent::__construct($unitOfWork);
 

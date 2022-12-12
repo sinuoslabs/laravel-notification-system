@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use Domain\Contracts\UnitOfWorkInterface;
+use Domain\Ports\UnitOfWorkPort;
 use Domain\Repositories\DeviceRepositoryInterface;
 use Domain\Repositories\NotificationRepositoryInterface;
 use Domain\Repositories\SettingRepositoryInterface;
 use Domain\Repositories\TemplateRepositoryInterface;
 use Domain\Repositories\UserRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
-use Infrastructure\Persistences\Eloquent\EloquentUnitOfWork;
+use Infrastructure\Persistences\Eloquent\EloquentUnitOfWorkPort;
 use Infrastructure\Persistences\Eloquent\Repositories\EloquentDeviceRepository;
 use Infrastructure\Persistences\Eloquent\Repositories\EloquentNotificationRepository;
 use Infrastructure\Persistences\Eloquent\Repositories\EloquentSettingsRepository;
@@ -30,7 +30,7 @@ class DomainServiceProvider extends ServiceProvider
         $this->app->bind(NotificationRepositoryInterface::class, EloquentNotificationRepository::class);
 
         // Unit of work
-        $this->app->bind(UnitOfWorkInterface::class, EloquentUnitOfWork::class);
+        $this->app->bind(UnitOfWorkPort::class, EloquentUnitOfWorkPort::class);
     }
 
     public function boot(): void

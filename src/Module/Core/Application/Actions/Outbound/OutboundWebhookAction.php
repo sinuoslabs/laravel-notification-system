@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Application\Actions\Outbound;
 
-use Domain\Abstracts\NotificationDomain;
-use Domain\Contracts\UnitOfWorkInterface;
 use Domain\Entities\Notification;
 use Domain\Messages\WebhookMessage;
+use Domain\Ports\NotificationPort;
+use Domain\Ports\UnitOfWorkPort;
 use Domain\Repositories\NotificationRepositoryInterface;
 use Shared\Application\Actionable;
 use Shared\Application\Contracts\ActionableInput;
@@ -17,14 +17,14 @@ class OutboundWebhookAction extends Actionable
     /**
      * Outbound webhook action
      *
-     * @param UnitOfWorkInterface $unitOfWork
+     * @param UnitOfWorkPort $unitOfWork
      * @param NotificationRepositoryInterface $notificationRepository
-     * @param NotificationDomain $notification
+     * @param NotificationPort $notification
      */
     public function __construct(
-        protected readonly UnitOfWorkInterface           $unitOfWork,
+        protected readonly UnitOfWorkPort                $unitOfWork,
         private readonly NotificationRepositoryInterface $notificationRepository,
-        private readonly NotificationDomain        $notification,
+        private readonly NotificationPort                $notification,
     )
     {
         parent::__construct($unitOfWork);

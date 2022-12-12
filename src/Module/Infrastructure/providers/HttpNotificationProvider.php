@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace Infrastructure\providers;
 
-use Domain\Abstracts\MessageDomain;
-use Domain\Abstracts\NotificationDomain;
+use Domain\Ports\MessagePort;
+use Domain\Ports\NotificationPort;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
-class HttpNotificationProvider extends NotificationDomain
+class HttpNotificationProvider implements NotificationPort
 {
     /**
      * Send http notification provider
      *
      * @throws \Exception
      */
-    public function send(MessageDomain $message)
+    public function send(MessagePort $message)
     {
         try {
             return Http::asJson()

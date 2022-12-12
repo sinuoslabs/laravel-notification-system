@@ -2,11 +2,11 @@
 
 namespace Infrastructure\Persistences\Eloquent;
 
-use Domain\Contracts\UnitOfWorkInterface;
+use Domain\Ports\UnitOfWorkPort;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class EloquentUnitOfWork implements UnitOfWorkInterface
+class EloquentUnitOfWorkPort implements UnitOfWorkPort
 {
     /**
      * @throws \Exception

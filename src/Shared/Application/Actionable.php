@@ -2,7 +2,7 @@
 
 namespace Shared\Application;
 
-use Domain\Contracts\UnitOfWorkInterface;
+use Domain\Ports\UnitOfWorkPort;
 use Illuminate\Support\Facades\Log;
 use Shared\Application\Contracts\ActionableInput;
 use Spatie\QueueableAction\QueueableAction;
@@ -11,7 +11,7 @@ abstract class Actionable
 {
     use QueueableAction;
 
-    private UnitOfWorkInterface $unitOfWork;
+    private UnitOfWorkPort $unitOfWork;
 
     /**
      * @param ActionableInput $data
@@ -20,9 +20,9 @@ abstract class Actionable
     public abstract function prepare(ActionableInput $data);
 
     /**
-     * @param UnitOfWorkInterface $unitOfWork
+     * @param UnitOfWorkPort $unitOfWork
      */
-    public function __construct(UnitOfWorkInterface $unitOfWork)
+    public function __construct(UnitOfWorkPort $unitOfWork)
     {
         $this->unitOfWork = $unitOfWork;
     }

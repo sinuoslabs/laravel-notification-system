@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace Infrastructure\providers;
 
-use Domain\Abstracts\MessageDomain;
-use Domain\Abstracts\NotificationDomain;
+use Domain\Ports\MessagePort;
+use Domain\Ports\NotificationPort;
 
-class TwilioNotificationProvider extends NotificationDomain
+class TwilioNotificationProvider implements NotificationPort
 {
     public function __construct()
     {
     }
 
-    public function send(MessageDomain $message)
+    public function send(MessagePort $message)
     {
         // TODO: Implement send() method.
     }
