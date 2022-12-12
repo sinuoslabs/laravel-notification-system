@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class SettingsModel extends Model
 {
     use HasFactory;
-    use SoftDeletes;
     use HasUuids;
 
     protected $table = 'settings';

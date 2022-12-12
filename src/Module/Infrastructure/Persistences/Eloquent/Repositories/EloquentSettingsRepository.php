@@ -6,28 +6,36 @@ namespace Infrastructure\Persistences\Eloquent\Repositories;
 
 use Domain\Entities\Settings;
 use Domain\Repositories\SettingRepositoryInterface;
+use Illuminate\Database\Eloquent\Builder;
 use Infrastructure\Persistences\Eloquent\Models\SettingsModel;
 
 class EloquentSettingsRepository implements SettingRepositoryInterface
 {
-    public function allSettings()
+    private Builder $model;
+
+    public function __construct()
     {
-        // TODO: Implement allSettings() method.
+        $this->model = SettingsModel::query();
     }
 
-    public function getSettingsFromId(string $id)
+    public function allSettings(): array
+    {
+        return $this->model->get()->toArray();
+    }
+
+    public function getSettingsFromId(string $id): Settings
     {
         // TODO: Implement getSettingsFromId() method.
     }
 
-    public function getSettingsFromUserId(string $id)
+    public function getSettingsFromUserId(string $id): Settings
     {
         // TODO: Implement getSettingsFromUserId() method.
     }
 
     public function saveSettings(Settings $settings)
     {
-        return SettingsModel::create([
+        return $this->model->create([
             'id' => $settings->getId(),
             'user_id' => $settings->getUserId(),
             'channel' => $settings->getChannel(),
@@ -35,7 +43,7 @@ class EloquentSettingsRepository implements SettingRepositoryInterface
         ]);
     }
 
-    public function updateSettings(Settings $settings)
+    public function updateSettings(Settings $settings): Settings
     {
         // TODO: Implement updateSettings() method.
     }
